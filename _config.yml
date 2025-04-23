@@ -1,10 +1,6 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-permissions:
-  contents: read
-  issues: write
-
 title: blank # the website title (if blank, full name will be used instead)
 first_name: VerbaNexAI
 middle_name:
