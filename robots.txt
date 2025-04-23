@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://verbanexai.github.io/al-folio/sitemap.xml
+Sitemap: https://verbanexai.github.io/sitemap.xml
