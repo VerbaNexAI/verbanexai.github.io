@@ -16,8 +16,8 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: project
-    description: a project with a background image
+    title: PETER
+    description: Phonesthemes Encoder from Transformer Embedding Representation
     img: /assets/img/12.jpg
     ---
 
