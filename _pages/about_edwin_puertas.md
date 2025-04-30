@@ -1,1 +1,1 @@
-
+Systems Engineer, Master in Engineering with an emphasis in Systems Engineering from Universidad Tecnológica de Bolívar, Ph.D. in Engineering from Pontificia Universidad Javeriana. Specialist in application development using Java, .NET, Delphi, and PHP, applying software engineering techniques, best practices, and design patterns.
