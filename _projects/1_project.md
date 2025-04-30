@@ -8,7 +8,7 @@ category: work
 related_publications: true
 ---
 
-![PETER Architecture](assets/img/peter_architecture.png)
+{% include figure.liquid loading="eager" path="assets/img/peter_architecture.png" title="Peter architecture" class="img-fluid rounded z-depth-1" %}
 
 PETER is a novel transformer-based architecture designed to process and understand phonesthemes (sound-meaning patterns) in text using a multi-layered embedding approach. It combines phonestheme embeddings with positional encodings and word-level information to create rich text representations.
 
