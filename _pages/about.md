@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Universidad Tecnologica de Bolivar, School of Engineering, Cartagena de Indias 130010, Colombia.
+subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of Engineering, Cartagena de Indias 130010, Colombia.</a>
 
 profile:
   align: right
-  image: VerbaNextAI.png
+  image: VerbaNexAI.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>School of Engineering</p>
