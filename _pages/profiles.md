@@ -14,15 +14,13 @@ profiles:
     content: about_edwin_puertas.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>Edwin Alexander Puertas del Castillo</p>
-      <p>Universidad Tecnologica de Bolivar</p>
+      <p>Universidad Tecnológica de Bolívar</p>
       <p>epuerta@utb.edu.co</p>
   - align: left
     image: juan_carlos_martinez_santos.jpg
     content: about_juan_carlos_martinez.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>Juan Carlos Martínez Santos</p>
-      <p>Universidad Tecnologica de Boliva</p>
+      <p>Universidad Tecnológica de Bolívar</p>
       <p>jcmartinezs@utb.edu.co</p>
 ---
