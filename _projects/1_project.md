@@ -1,81 +1,144 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: PETER
+description: Phonesthemes Encoder from Transformer Embedding Representation
 img: assets/img/12.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+![PETER Architecture](peter_architecture.png)
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+PETER is a novel transformer-based architecture designed to process and understand phonesthemes (sound-meaning patterns) in text using a multi-layered embedding approach. It combines phonestheme embeddings with positional encodings and word-level information to create rich text representations.
 
-    ---
-    layout: page
-    title: PETER
-    description: Phonesthemes Encoder from Transformer Embedding Representation
-    img: /assets/img/12.jpg
-    ---
+## Architecture Overview
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+PETER uses four main types of embeddings that are combined:
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+1. **Word Positional Encoding**: Tracks position of words in the sequence
+2. **Word Segment Embedding**: Vector representation of complete words
+3. **Phonestheme Positional Encoding**: Tracks position of phonesthemes within words
+4. **Phonestheme Embedding**: Vector representation of phonesthemes (sound units)
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The model processes text by:
+- Breaking words into phonesthemes using syllabification
+- Converting text to IPA (International Phonetic Alphabet) representation
+- Applying multiple embedding layers
+- Processing through a transformer encoder
+- Generating predictions at the phonestheme level
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Installation
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+1. Clone the repository:
+```bash
+git clone git@github.com:VerbaNexAI/PETER.git
+cd PETER
 ```
 
-{% endraw %}
+2. Create and activate a virtual environment (optional but recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+3. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Project Structure
+
+```
+.
+├── data/                      # Training and testing data
+├── experiments/               # Jupyter notebooks for testing
+├── logs/                      # Training logs
+├── models/                    # Saved model weights and embeddings
+├── src/                       # Source code
+│   ├── embeddings/           # Embedding implementations
+│   ├── tokenizers/           # Text tokenization modules
+│   └── utils/                # Helper functions
+```
+
+## Usage
+
+### Basic Example
+
+```python
+from src.peter import TransformerEncoder
+from src.tokenizers.phonestheme_tokenizer import PhonesthemeTokenizer
+from src.tokenizers.word_tokenizer import WordSegmentEmbedding
+
+# Initialize tokenizers
+phonestheme_tokenizer = PhonesthemeTokenizer(
+    model="models/phonestheme_embedding_es.model",
+    max_length=150
+)
+
+word_tokenizer = WordSegmentEmbedding(
+    model="models/word_embedding_es.model",
+    max_length=512
+)
+
+# Initialize model
+model = TransformerEncoder(
+    phonestheme_tokenizer=phonestheme_tokenizer,
+    word_tokenizer=word_tokenizer,
+    vocab_size=8000,
+    d_model=150,
+    nhead=5,
+    num_layers=6
+)
+
+# Load pretrained weights
+model.load_state_dict(torch.load("models/peter_model_trained.pth"))
+
+# Process text
+text = "hola buenos días"
+phonestheme_tokens = phonestheme_tokenizer.encode(text)
+word_tokens = word_tokenizer.encode(text)
+
+output = model(
+    input_ids=phonestheme_tokens["input_ids"].unsqueeze(0),
+    attention_mask=phonestheme_tokens["attention_mask"].unsqueeze(0),
+    word_input_ids=word_tokens.unsqueeze(0)
+)
+```
+
+## Training
+
+The model can be trained using your own data. Check the notebooks in the `experiments/` directory for training examples.
+
+## Requirements
+
+Main dependencies:
+- Python 3.8+
+- PyTorch 2.0+
+- epitran
+- pylabeador
+- gensim
+- num2words
+
+See `requirements.txt` for complete list.
+
+## License
+
+This project is licensed under the terms of the LICENSE file included in the repository.
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{PETERpaper,
+  title={PETER: Phonesthemes Encoder from Transformer Embedding Representation},
+  author={E. Payares, E. Puertas, J.C. Martinez-Santos},
+  year={2024}
+}
+```
+
+## Contact
+
+For questions or issues, please open an issue in the repository.
+
