@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of Engineering, Cartagena de Indias 130010, Colombia.</a>
+subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of Engineering.</a>
 
 profile:
   align: right
