@@ -11,18 +11,18 @@ profiles:
   # and create one content file for each profile inside _pages/
   - align: right
     image: prof_pic.jpg
-    content: about_einstein.md
+    content: about_edwin_puertas.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>Edwin Alexander Puertas del Castillo</p>
+      <p>Universidad Tecnologica de Bolivar</p>
+      <p>epuerta@utb.edu.co</p>
   - align: left
     image: prof_pic.jpg
-    content: about_einstein.md
+    content: about_juan_carlos_martinez.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
+      <p>Juan Carlos Martínez Santos</p>
+      <p>Universidad Tecnologica de Boliva</p>
+      <p>jcmartinezs@utb.edu.co</p>
 ---
