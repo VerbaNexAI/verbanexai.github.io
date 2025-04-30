@@ -10,7 +10,7 @@ profiles:
   # if you want to include more than one profile, just replicate the following block
   # and create one content file for each profile inside _pages/
   - align: right
-    image: edwinpuertas.png
+    image: edwin-puertas.png
     content: about_edwin_puertas.md
     image_circular: false # crops the image to make it circular
     more_info: >
@@ -18,7 +18,7 @@ profiles:
       <p>Universidad Tecnologica de Bolivar</p>
       <p>epuerta@utb.edu.co</p>
   - align: left
-    image: juan-carlosmartinezsantos.jpg
+    image: juan-carlos-martinez-santos.jpg
     content: about_juan_carlos_martinez.md
     image_circular: false # crops the image to make it circular
     more_info: >
