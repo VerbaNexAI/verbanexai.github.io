@@ -2,7 +2,7 @@
 layout: page
 title: PETER
 description: Phonesthemes Encoder from Transformer Embedding Representation
-img: assets/img/12.jpg
+img: assets/img/peter_architecture.png
 importance: 1
 category: work
 related_publications: true
