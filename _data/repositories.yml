@@ -1,10 +1,11 @@
 github_users:
-  - VerbaNexAI
   - EdwinPuertas
 
 repo_description_lines_max: 2
 
 github_repos:
-  - VerbaNexAI/PETER
+  - VerbaNexAI/PhoneticHateSpeech
+  - VerbaNexAI/FakeNewsDetector
+  - VerbaNexAI/SemEval2025
   - VerbaNexAI/TextAnalysis
-  - VerbaNexAI/APOLLO.AI
+  - VerbaNexAI/PVROILong-Term-Effects
