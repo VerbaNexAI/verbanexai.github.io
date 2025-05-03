@@ -10,7 +10,6 @@ related_publications: true
 
 {% include figure.liquid loading="eager" path="assets/img/nlp_banner.png" title="Natural Language Processing" class="img-fluid rounded z-depth-1" %}
 ---
-**`machine-learning`**, **`artificial-intelligenc`**, **`deep-learning`**, **`computational-linguistics`**, **`python`**
 
 ## 📋 Course Overview
 
@@ -63,31 +62,6 @@ related_publications: true
 
 ---
 
-## 🔄 Course Methodology
-
-The learning process is supported by four main activities:
-
-<div class="methodology-grid">
-  <div class="methodology-item">
-    <h3>📝 Thematic Presentations</h3>
-    <p>Synthesis of topics presented by the professor, enriched with valuable contributions and insights.</p>
-  </div>
-  <div class="methodology-item">
-    <h3>👤 Student Assignments</h3>
-    <p>Individual activities validating students' understanding and preparation of course materials.</p>
-  </div>
-  <div class="methodology-item">
-    <h3>👥 Workshops</h3>
-    <p>Group activities reinforcing learning through practical application of concepts and techniques.</p>
-  </div>
-  <div class="methodology-item">
-    <h3>📋 Exams</h3>
-    <p>Individual evaluations measuring learning progress throughout the course.</p>
-  </div>
-</div>
-
----
-
 ## 📚 Course Content
 
 <table class="module-table">
@@ -130,6 +104,31 @@ The learning process is supported by four main activities:
     </tr>
   </tbody>
 </table>
+
+---
+
+## 🔄 Course Methodology
+
+The learning process is supported by four main activities:
+
+<div class="methodology-grid">
+  <div class="methodology-item">
+    <h3>📝 Thematic Presentations</h3>
+    <p>Synthesis of topics presented by the professor, enriched with valuable contributions and insights.</p>
+  </div>
+  <div class="methodology-item">
+    <h3>👤 Student Assignments</h3>
+    <p>Individual activities validating students' understanding and preparation of course materials.</p>
+  </div>
+  <div class="methodology-item">
+    <h3>👥 Workshops</h3>
+    <p>Group activities reinforcing learning through practical application of concepts and techniques.</p>
+  </div>
+  <div class="methodology-item">
+    <h3>📋 Exams</h3>
+    <p>Individual evaluations measuring learning progress throughout the course.</p>
+  </div>
+</div>
 
 ---
 
