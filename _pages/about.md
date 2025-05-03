@@ -2,14 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of Engineering.</a>
+subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of digital transformation.</a>
 
 profile:
   align: right
   image: VerbaNexAI.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>School of Engineering</p>
+    <p>School of digital transformation</p>
     <p>Parque Industrial y Tecnológico Carlos Vélez Pombo Km 1 Vía Turbaco</p>
     <p>Cartagena de Indias, Colombia</p>
 
