@@ -2,10 +2,10 @@
 layout: page
 title: Teaching
 permalink: /teaching/
-description: A growing collection of your teaching materials.
+description:
 nav: true
 nav_order: 3
-display_categories: [courses]  # o las categorías que prefieras
+display_categories: [Courses]  # o las categorías que prefieras
 horizontal: false
 ---
 
