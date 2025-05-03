@@ -4,7 +4,7 @@ title: Natural Language Processing
 description: NLP
 img: assets/img/nlp_banner.png
 importance: 1
-category: lectures
+category: courses
 related_publications: true
 ---
 
@@ -129,19 +129,6 @@ The learning process is supported by four main activities:
     </tr>
   </tbody>
 </table>
-
----
-
-## 📖 Bibliography
-
-<div class="bibliography">
-  <ul>
-    <li>Dan Jurafsky and James H. Martin (2020), <em>Speech and Language Processing</em> (3rd ed. draft)</li>
-    <li>Beysolow II, T. (2018). <em>Applied Natural Language Processing with Python: Implementing Machine Learning and Deep Learning Algorithms for Natural Language Processing</em>. Apress.</li>
-    <li>Vajjala, S., Majumder, B., Gupta, A., & Surana, H. (2020). <em>Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems</em>. O'Reilly Media.</li>
-    <li>Srinivasa-Desikan, B. (2018). <em>Natural Language Processing and Computational Linguistics: A practical guide to text analysis with Python, Gensim, spaCy, and Keras</em>. Packt Publishing Ltd.</li>
-  </ul>
-</div>
 
 ---
 
@@ -275,6 +262,22 @@ The learning process is supported by four main activities:
     <p>Automatically creating original text</p>
   </div>
 </div>
+
+---
+
+## 📖 Bibliography
+
+<div class="bibliography">
+  <ul>
+    <li>Dan Jurafsky and James H. Martin (2020), <em>Speech and Language Processing</em> (3rd ed. draft)</li>
+    <li>Beysolow II, T. (2018). <em>Applied Natural Language Processing with Python: Implementing Machine Learning and Deep Learning Algorithms for Natural Language Processing</em>. Apress.</li>
+    <li>Vajjala, S., Majumder, B., Gupta, A., & Surana, H. (2020). <em>Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems</em>. O'Reilly Media.</li>
+    <li>Srinivasa-Desikan, B. (2018). <em>Natural Language Processing and Computational Linguistics: A practical guide to text analysis with Python, Gensim, spaCy, and Keras</em>. Packt Publishing Ltd.</li>
+  </ul>
+</div>
+
+---
+
 
 <!-- Add this CSS at the bottom of your Markdown file or in your theme's CSS file -->
 <style>
