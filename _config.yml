@@ -151,10 +151,10 @@ collections:
     defaults:
       layout: post
     output: true
-  :
+  projects:
     output: true
   teaching:
-    output: true
+    output: true    
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
