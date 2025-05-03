@@ -4,7 +4,7 @@ title: NLP
 description: Natural Language Processing
 img: assets/img/nlp_banner.png
 importance: 1
-category: work
+category: lectures
 related_publications: true
 ---
 
