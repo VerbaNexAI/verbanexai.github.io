@@ -11,439 +11,121 @@ related_publications: true
 {% include figure.liquid loading="eager" path="assets/img/nlp_banner.png" title="Natural Language Processing" class="img-fluid rounded z-depth-1" %}
 ---
 
-## 📋 Course Overview
+## Natural Language Processing
 
-| **Instructor:** | Edwin Puertas, PhD. | **Email:** | epuerta@utb.edu.co |
-|:----------------|:-------------------|:-----------|:-------------------|
-| **Office:** | AL-304 | **School:** | School of Digital Transformation |
-| **Hours:** | 3 hours per week | **Credits:** | 4 |
-| **Modality:** | Face-to-face | **Methodology:** | Lectures - Theoretical |
+![NLP Banner](https://api.placeholder.com/1200/300)
 
 ---
 
-## 🎯 Course Purpose
+### Descripción del curso
 
-> **Develop theoretical and practical competencies in Natural Language Processing (NLP)**, enabling students to apply machine learning techniques and models to analyze, understand, and generate text in various contexts, fostering the resolution of organizational and research problems with an ethical and sustainable approach.
-
-### Specific Objectives
-
-- 🧠 **Understand the theoretical foundations** of NLP, including language modeling, sentiment analysis, vector semantics, and neural networks
-- 💻 **Implement supervised and unsupervised learning models** using Python, NLTK, and TensorFlow
-- 📊 **Evaluate and optimize NLP models** through appropriate metrics and hyperparameter adjustments
-- 👥 **Develop NLP projects in teams**, applying communication skills, collaboration, and critical thinking
+| **Instructor**           | Edwin Puertas, PhD.                           | **Correo electrónico**     | epuerta@utb.edu.co                       |
+|--------------------------|-----------------------------------------------|----------------------------|------------------------------------------|
+| **Oficina**              | AL-304                                        | **Facultad**               | School of Digital Transformation         |
+| **Horas semanales**      | 3                                             | **Créditos**               | 4                                        |
+| **Modalidad**            | Presencial                                    | **Metodología**            | Sesiones teóricas                        |
 
 ---
 
-## 🔄 Course Methodology
+### Objetivo general
 
-The learning process is supported by four main activities:
+Desarrollar competencias teóricas y prácticas en Procesamiento de Lenguaje Natural (PLN), que permitan aplicar técnicas y modelos de aprendizaje automático para analizar, comprender y generar texto en diversos contextos, con un enfoque ético y sostenible.
 
-{% include course_methodology.html %}
+#### Objetivos específicos
 
-<div class="methodology-grid">
-  <div class="methodology-card">
-    <h3>📝 Thematic Presentations</h3>
-    <p>Synthesis of topics presented by the professor, enriched with valuable contributions and insights.</p>
-  </div>
-  <div class="methodology-card">
-    <h3>👤 Student Assignments</h3>
-    <p>Individual activities validating students' understanding and preparation of course materials.</p>
-  </div>
-  <div class="methodology-card">
-    <h3>👥 Workshops</h3>
-    <p>Group activities reinforcing learning through practical application of concepts and techniques.</p>
-  </div>
-  <div class="methodology-card">
-    <h3>📋 Exams</h3>
-    <p>Individual evaluations measuring learning progress throughout the course.</p>
-  </div>
-</div>
+1. Comprender los fundamentos teóricos del PLN, incluyendo modelos de lenguaje, análisis de sentimiento, semántica vectorial y redes neuronales.  
+2. Implementar modelos supervisados y no supervisados con Python, NLTK y TensorFlow.  
+3. Evaluar y optimizar modelos de PLN mediante métricas adecuadas y ajuste de hiperparámetros.  
+4. Desarrollar proyectos de PLN en equipo, fortaleciendo habilidades de comunicación, colaboración y pensamiento crítico.  
 
 ---
 
-## 📚 Course Content
+### Metodología
 
-<div class="course-content">
-  <table>
-    <thead>
-      <tr>
-        <th>Module 1:<br>Fundamentals of NLP</th>
-        <th>Module 2:<br>Machine Learning & NLP</th>
-        <th>Module 3:<br>Applications and Ethics</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <ol>
-            <li>Introduction to NLP and human language technologies</li>
-            <li>Regular expressions, text normalization, and edit distance</li>
-            <li>Language modeling with N-Grams</li>
-            <li>Text classification with Naïve Bayes and sentiment analysis</li>
-            <li>Logistic regression and vector semantics</li>
-          </ol>
-        </td>
-        <td>
-          <ol>
-            <li>Neural networks and neural language models</li>
-            <li>Sequence labeling for parts of speech and named entities</li>
-            <li>RNNs, LSTMs, and advanced language models</li>
-            <li>Transformers and large language models (BERT, GPT)</li>
-            <li>Fine-tuning, prompting, and in-context learning</li>
-          </ol>
-        </td>
-        <td>
-          <ol>
-            <li>Machine translation and text generation</li>
-            <li>Question answering and information retrieval</li>
-            <li>Development of chatbots and dialogue systems</li>
-            <li>Automatic speech recognition and voice synthesis</li>
-            <li>Ethical considerations in NLP and applications in reducing inequalities</li>
-          </ol>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+El proceso de aprendizaje se articula en cuatro tipos de actividades complementarias:
+
+- **Exposiciones temáticas**  
+  Presentaciones por parte del docente, complementadas con discusiones y aportes de los estudiantes.
+
+- **Tareas individuales**  
+  Ejercicios prácticos para validar la comprensión y preparación de los contenidos.
+
+- **Talleres grupales**  
+  Desarrollo colaborativo de conceptos y técnicas mediante casos prácticos.
+
+- **Evaluaciones**  
+  Pruebas individuales para medir el avance de los estudiantes.
 
 ---
 
-## 📖 Bibliography
+### Temario
 
-<div class="bibliography">
-  <ul>
-    <li>Dan Jurafsky and James H. Martin (2020), <em>Speech and Language Processing</em> (3rd ed. draft)</li>
-    <li>Beysolow II, T. (2018). <em>Applied Natural Language Processing with Python: Implementing Machine Learning and Deep Learning Algorithms for Natural Language Processing</em>. Apress.</li>
-    <li>Vajjala, S., Majumder, B., Gupta, A., & Surana, H. (2020). <em>Practical Natural Language Processing: A Comprehensive Guide to Building Real-World NLP Systems</em>. O'Reilly Media.</li>
-    <li>Srinivasa-Desikan, B. (2018). <em>Natural Language Processing and Computational Linguistics: A practical guide to text analysis with Python, Gensim, spaCy, and Keras</em>. Packt Publishing Ltd.</li>
-  </ul>
-</div>
-
----
-
-## 🔍 What is NLP?
-
-<div class="nlp-definition">
-  <p><strong>Natural Language Processing (NLP)</strong>, or Computational Linguistics, is concerned with theoretical and practical issues in the design and implementation of computer systems for processing human languages.</p>
-</div>
+| **Módulo 1: Fundamentos de PLN**           | **Módulo 2: Aprendizaje automático y PLN**     | **Módulo 3: Aplicaciones y ética**                           |
+|--------------------------------------------|-----------------------------------------------|--------------------------------------------------------------|
+| 1. Introducción al PLN                     | 1. Redes neuronales y modelos de lenguaje     | 1. Traducción automática y generación de texto               |
+| 2. Expresiones regulares y normalización   | 2. Etiquetado de secuencias (POS, entidades)  | 2. Recuperación de información y sistemas de pregunta–respuesta |
+| 3. Modelos de lenguaje N-gram              | 3. RNN, LSTM y modelos avanzados              | 3. Desarrollo de chatbots y sistemas de diálogo              |
+| 4. Clasificación de texto y análisis de sentimiento | 4. Transformers y modelos de gran escala (BERT, GPT) | 4. Reconocimiento de voz y síntesis de voz                   |
+| 5. Regresión logística y semántica vectorial | 5. Ajuste fino, prompting y aprendizaje en contexto | 5. Consideraciones éticas y reducción de desigualdades      |
 
 ---
 
-## 🧩 NLP Fundamentals
+### Bibliografía
 
-### Language Processing Levels
-
-<div class="language-levels">
-  <div class="level-card">
-    <h4>📢 Phonetics</h4>
-    <p>The study of speech sounds, examining how sounds are produced, transmitted, and perceived</p>
-  </div>
-  <div class="level-card">
-    <h4>🔊 Phonology</h4>
-    <p>The study of sound systems and how sounds function within a particular language</p>
-  </div>
-  <div class="level-card">
-    <h4>📝 Morphology</h4>
-    <p>The study of word formation, examining morphemes (smallest meaningful units of language)</p>
-  </div>
-  <div class="level-card">
-    <h4>🔄 Syntax</h4>
-    <p>The study of sentence structure and arrangement of words and phrases</p>
-  </div>
-  <div class="level-card">
-    <h4>💭 Semantics</h4>
-    <p>The study of meaning in words and sentences, including lexical and compositional semantics</p>
-  </div>
-  <div class="level-card">
-    <h4>👥 Pragmatics</h4>
-    <p>The study of language use in social contexts, considering factors like speaker intention and implied meaning</p>
-  </div>
-</div>
-
-### Key NLP Components
-
-<table class="components-table">
-  <thead>
-    <tr>
-      <th>Component</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Text Preprocessing</strong></td>
-      <td>Preparing raw text for analysis by transforming it into machine-readable format</td>
-    </tr>
-    <tr>
-      <td><strong>Feature Extraction</strong></td>
-      <td>Converting raw text into numerical representations</td>
-    </tr>
-    <tr>
-      <td><strong>POS Tagging</strong></td>
-      <td>Identifying the grammatical function of each word</td>
-    </tr>
-    <tr>
-      <td><strong>Named Entity Recognition</strong></td>
-      <td>Identifying useful entities like names, locations, and dates</td>
-    </tr>
-    <tr>
-      <td><strong>Coreference Resolution</strong></td>
-      <td>Identifying when different words refer to the same entity</td>
-    </tr>
-    <tr>
-      <td><strong>Parsing</strong></td>
-      <td>Analyzing grammatical structure to extract meaning</td>
-    </tr>
-  </tbody>
-</table>
-
-### Fundamental Techniques & Algorithms
-
-<div class="techniques-container">
-  <div class="techniques-section">
-    <h4>Techniques</h4>
-    <ul>
-      <li><strong>Tokenization:</strong> Dividing text into smaller units</li>
-      <li><strong>Lemmatization/Stemming:</strong> Reducing words to base form</li>
-      <li><strong>POS Tagging:</strong> Identifying grammatical functions</li>
-      <li><strong>Dependency Parsing:</strong> Understanding syntactic relationships</li>
-    </ul>
-  </div>
-  <div class="techniques-section">
-    <h4>Algorithms</h4>
-    <ul>
-      <li><strong>Bag of Words:</strong> Simple representation of word frequency</li>
-      <li><strong>TF-IDF:</strong> Weighting word importance in documents</li>
-      <li><strong>Word Embeddings:</strong> Vector representations of words</li>
-      <li><strong>N-gram Models:</strong> Predicting words based on context</li>
-      <li><strong>Pre-trained Models:</strong> Models trained on massive text corpora</li>
-    </ul>
-  </div>
-</div>
+- Jurafsky, D. & Martin, J. H. (2020). *Speech and Language Processing* (3rd ed. draft).  
+- Beysolow II, T. (2018). *Applied Natural Language Processing with Python*. Apress.  
+- Vajjala, S., Majumder, B., Gupta, A. & Surana, H. (2020). *Practical Natural Language Processing*. O’Reilly Media.  
+- Srinivasa-Desikan, B. (2018). *Natural Language Processing and Computational Linguistics*. Packt Publishing.
 
 ---
 
-## 🚀 Practical Applications of NLP
+## Introducción al PLN
 
-<div class="applications-grid">
-  <div class="application-card">
-    <h3>😃 Sentiment Analysis</h3>
-    <p>Determining opinions or emotions expressed in text</p>
-  </div>
-  
-  <div class="application-card">
-    <h3>🤖 Chatbots</h3>
-    <p>Automated conversations with users</p>
-  </div>
-  
-  <div class="application-card">
-    <h3>🌐 Machine Translation</h3>
-    <p>Translating text between languages</p>
-  </div>
-  
-  <div class="application-card">
-    <h3>🔍 Information Extraction</h3>
-    <p>Identifying and extracting relevant data from large text corpora</p>
-  </div>
-  
-  <div class="application-card">
-    <h3>✍️ Text Generation</h3>
-    <p>Automatically creating original text</p>
-  </div>
-</div>
+**Procesamiento de Lenguaje Natural (PLN)** estudia tanto los aspectos teóricos como prácticos en el diseño e implementación de sistemas informáticos para el tratamiento de lenguajes humanos.
 
-<!-- CSS for theme compatibility -->
-<style>
-  /* Base Styles with variables for theme compatibility */
-  :root {
-    --primary-color: #3a7bd5;
-    --secondary-color: #00d2ff;
-    --accent-color: #6d48e5;
-    --text-color: #333;
-    --text-color-light: #666;
-    --background-color: #fff;
-    --card-background: #f5f7fa;
-    --border-color: #ddd;
-    --hover-color: #f0f0f0;
-    --table-header-bg: #3a7bd5;
-    --table-header-text: #fff;
-    --table-odd-row: #f7f7f7;
-  }
+---
 
-  /* Dark theme overrides */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --primary-color: #5c8eff;
-      --secondary-color: #41c7ff;
-      --accent-color: #9b7eff;
-      --text-color: #e0e0e0;
-      --text-color-light: #b0b0b0;
-      --background-color: #1a1a1a;
-      --card-background: #2a2a2a;
-      --border-color: #444;
-      --hover-color: #333;
-      --table-header-bg: #2c5aa0;
-      --table-header-text: #fff;
-      --table-odd-row: #252525;
-    }
-  }
+## Niveles de análisis lingüístico
 
-  /* General styling */
-  body {
-    color: var(--text-color);
-    background-color: var(--background-color);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
+| Nivel       | Descripción                                                                         |
+|-------------|-------------------------------------------------------------------------------------|
+| Fonética    | Estudio de los sonidos del habla: producción, transmisión y percepción.             |
+| Fonología   | Análisis de los sistemas de sonidos y su función en una lengua determinada.         |
+| Morfología  | Examen de la formación de palabras y sus unidades mínimas de significado (morfemas).|
+| Sintaxis    | Estructura de las oraciones y organización de palabras y frases.                    |
+| Semántica   | Estudio del significado en palabras y oraciones, tanto léxico como composicional.   |
+| Pragmática  | Uso del lenguaje en contexto social, intenciones del hablante e implicaciones.      |
 
-  h1, h2, h3, h4 {
-    color: var(--primary-color);
-  }
+---
 
-  hr {
-    border: 0;
-    height: 1px;
-    background: var(--border-color);
-    margin: 2rem 0;
-  }
+## Componentes clave del PLN
 
-  a {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
+| Componente                      | Descripción                                                   |
+|---------------------------------|---------------------------------------------------------------|
+| Preprocesamiento de texto       | Transformación del texto bruto en un formato legible por máquinas. |
+| Extracción de características   | Conversión de texto a representaciones numéricas.             |
+| POS tagging                     | Identificación de la función gramatical de cada palabra.      |
+| Reconocimiento de entidades     | Detección de nombres, lugares y fechas relevantes.            |
+| Resolución de correferencias    | Identificación de referencias a la misma entidad.             |
+| Análisis sintáctico             | Estructuración gramatical para extraer significado.           |
 
-  a:hover {
-    text-decoration: underline;
-  }
+---
 
-  blockquote {
-    border-left: 4px solid var(--primary-color);
-    padding-left: 1rem;
-    margin-left: 0;
-    color: var(--text-color-light);
-  }
+## Técnicas y algoritmos fundamentales
 
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    overflow: hidden;
-    border-radius: 8px;
-  }
+- **Tokenización:** División del texto en unidades mínimas.  
+- **Lematización / Stemizado:** Reducción de palabras a su forma raíz.  
+- **Parsing de dependencias:** Identificación de relaciones sintácticas.  
+- **Bag of Words / TF-IDF:** Representaciones basadas en frecuencia y peso de términos.  
+- **Word Embeddings:** Vectores que capturan similitud semántica.  
+- **Modelos preentrenados:** Redes entrenadas en grandes corpus de texto.  
 
-  th {
-    background-color: var(--table-header-bg);
-    color: var(--table-header-text);
-    padding: 0.75rem;
-    text-align: left;
-  }
+---
 
-  td {
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-  }
+## Aplicaciones prácticas
 
-  tr:nth-child(odd) {
-    background-color: var(--table-odd-row);
-  }
-
-  /* Course Methodology Grid */
-  .methodology-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-
-  .methodology-card {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-  }
-
-  /* Course Content */
-  .course-content table th {
-    text-align: center;
-  }
-
-  .course-content ol {
-    padding-left: 1.5rem;
-    margin: 0;
-  }
-
-  /* Bibliography */
-  .bibliography {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-  }
-
-  /* NLP Definition */
-  .nlp-definition {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
-  }
-
-  /* Language Levels */
-  .language-levels {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-
-  .level-card {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-  }
-
-  /* Components Table */
-  .components-table th {
-    width: 30%;
-  }
-
-  /* Techniques Container */
-  .techniques-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .techniques-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .techniques-section {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-  }
-
-  /* Applications Grid */
-  .applications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-
-  .application-card {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s;
-  }
-
-  .application-card:hover {
-    transform: translateY(-5px);
-  }
-</style>
+1. **Análisis de sentimiento**  
+2. **Sistemas de diálogo y chatbots**  
+3. **Traducción automática**  
+4. **Extracción de información**  
+5. **Generación automática de texto**  
