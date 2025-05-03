@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Natural Language Processing
-description: **`machine-learning`**, **`artificial-intelligenc`**, **`deep-learning`**, **`computational-linguistics`**, **`python`**
+description: 
 img: assets/img/nlp_banner.png
 importance: 1
 category: courses
@@ -10,6 +10,7 @@ related_publications: true
 
 {% include figure.liquid loading="eager" path="assets/img/nlp_banner.png" title="Natural Language Processing" class="img-fluid rounded z-depth-1" %}
 ---
+**`machine-learning`**, **`artificial-intelligenc`**, **`deep-learning`**, **`computational-linguistics`**, **`python`**
 
 ## 📋 Course Overview
 
