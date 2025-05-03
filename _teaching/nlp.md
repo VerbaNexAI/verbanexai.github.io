@@ -1,21 +1,16 @@
 ---
 layout: page
-title: PETER
-description: Phonesthemes Encoder from Transformer Embedding Representation
-img: assets/img/peter_architecture.png
+title: NLP
+description: Natural Language Processing
+img: assets/img/nlp_banner.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-{% include figure.liquid loading="eager" path="assets/img/peter_architecture.png" title="Peter architecture" class="img-fluid rounded z-depth-1" %}
-
-PETER is a novel transformer-based architecture designed to process and understand phonesthemes (sound-meaning patterns) in text using a multi-layered embedding approach. It combines phonestheme embeddings with positional encodings and word-level information to create rich text representations.
-
 # Natural Language Processing
 
-![NLP Banner](https://api.placeholder.com/1200/300)
-
+{% include figure.liquid loading="eager" path="assets/img/nlp_banner.png" title="Natural Language Processing" class="img-fluid rounded z-depth-1" %}
 ---
 
 ## 📋 Course Overview
