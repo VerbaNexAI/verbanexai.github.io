@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Natural Language Processing
-description: NLP
+description: **`machine-learning`**, **`artificial-intelligenc`**, **`deep-learning`**, **`computational-linguistics`**, **`python`**
 img: assets/img/nlp_banner.png
 importance: 1
 category: courses
