@@ -496,6 +496,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "teaching-nlp",
+          title: 'NLP',
+          description: "Natural Language Processing",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/nlp/";
             },},{
         id: 'social-email',
         title: 'email',
