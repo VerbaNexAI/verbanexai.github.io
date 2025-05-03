@@ -24,7 +24,7 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for item in sorted_items %}
-      {% include teaching_horizontal.liquid %}
+      {% include teaching_horizontal.liquid project=item %}
     {% endfor %}
     </div>
   </div>
@@ -50,7 +50,7 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for item in sorted_items %}
-      {% include teaching_horizontal.liquid %}
+      {% include teaching_horizontal.liquid project=item %}
     {% endfor %}
     </div>
   </div>
