@@ -210,27 +210,52 @@ The learning process is supported by four main activities:
 
 ### Fundamental Techniques & Algorithms
 
-<div class="techniques-container">
-  <div class="techniques-column">
-    <h4>Techniques</h4>
-    <ul>
-      <li><strong>Tokenization:</strong> Dividing text into smaller units</li>
-      <li><strong>Lemmatization/Stemming:</strong> Reducing words to base form</li>
-      <li><strong>POS Tagging:</strong> Identifying grammatical functions</li>
-      <li><strong>Dependency Parsing:</strong> Understanding syntactic relationships</li>
-    </ul>
-  </div>
-  <div class="techniques-column">
-    <h4>Algorithms</h4>
-    <ul>
-      <li><strong>Bag of Words:</strong> Simple representation of word frequency</li>
-      <li><strong>TF-IDF:</strong> Weighting word importance in documents</li>
-      <li><strong>Word Embeddings:</strong> Vector representations of words</li>
-      <li><strong>N-gram Models:</strong> Predicting words based on context</li>
-      <li><strong>Pre-trained Models:</strong> Models trained on massive text corpora</li>
-    </ul>
-  </div>
-</div>
+<table class="components-table">
+  <thead>
+    <tr>
+      <th>Technique/Algorithm</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tokenization</strong></td>
+      <td>Dividing text into smaller units</td>
+    </tr>
+    <tr>
+      <td><strong>Lemmatization/Stemming</strong></td>
+      <td>Reducing words to base form</td>
+    </tr>
+    <tr>
+      <td><strong>POS Tagging</strong></td>
+      <td>Identifying grammatical functions</td>
+    </tr>
+    <tr>
+      <td><strong>Dependency Parsing</strong></td>
+      <td>Understanding syntactic relationships</td>
+    </tr>
+    <tr>
+      <td><strong>Bag of Words</strong></td>
+      <td>Simple representation of word frequency</td>
+    </tr>
+    <tr>
+      <td><strong>TF-IDF</strong></td>
+      <td>Weighting word importance in documents</td>
+    </tr>
+    <tr>
+      <td><strong>Word Embeddings</strong></td>
+      <td>Vector representations of words</td>
+    </tr>
+    <tr>
+      <td><strong>N-gram Models</strong></td>
+      <td>Predicting words based on context</td>
+    </tr>
+    <tr>
+      <td><strong>Pre-trained Models</strong></td>
+      <td>Models trained on massive text corpora</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
