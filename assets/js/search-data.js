@@ -496,9 +496,9 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "teaching-natural-language-processing",
-          title: 'Natural Language Processing',
-          description: "NLP",
+            },},{id: "teaching-",
+          title: '',
+          description: "",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/nlp/";
             },},{
