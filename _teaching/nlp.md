@@ -55,10 +55,10 @@ related_publications: true
 
 ### Specific Objectives
 
-- 🧠 **Understand the theoretical foundations** of NLP, including language modeling, sentiment analysis, vector semantics, and neural networks
-- 💻 **Implement supervised and unsupervised learning models** using Python, NLTK, and TensorFlow
-- 📊 **Evaluate and optimize NLP models** through appropriate metrics and hyperparameter adjustments
-- 👥 **Develop NLP projects in teams**, applying communication skills, collaboration, and critical thinking
+- **Understand the theoretical foundations** of NLP, including language modeling, sentiment analysis, vector semantics, and neural networks
+- **Implement supervised and unsupervised learning models** using Python, NLTK, and TensorFlow
+- **Evaluate and optimize NLP models** through appropriate metrics and hyperparameter adjustments
+- **Develop NLP projects in teams**, applying communication skills, collaboration, and critical thinking
 
 ---
 
