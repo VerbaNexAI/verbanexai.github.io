@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations. Universidad Tecnologica de Bolivar, School of digital transformation.</a>
+subtitle: <a href='#'>Affiliations. Universidad Tecnológica de Bolívar, School of digital transformation.</a>
 
 profile:
   align: right
@@ -27,4 +27,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-VerbaNexAI Lab is a research group of the Universidad Tecnologica de Bolivar (UTB) in Colombia, dedicated to translating cutting-edge artificial intelligence research into practical solutions for language understanding, image analysis, energy modeling and educational technologies. The Lab brings together expertise in natural language processing, computer vision and predictive analytics to generate actionable insights for automated inspection, efficient energy management and adaptive learning environments, all within an open collaboration and reproducible research framework 
+VerbaNexAI Lab is a research group of the Universidad Tecnológica de Bolívar (UTB) in Colombia, dedicated to translating cutting-edge artificial intelligence research into practical solutions for language understanding, image analysis, energy modeling and educational technologies. The Lab brings together expertise in natural language processing, computer vision and predictive analytics to generate actionable insights for automated inspection, efficient energy management and adaptive learning environments, all within an open collaboration and reproducible research framework 
