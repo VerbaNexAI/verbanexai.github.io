@@ -31,7 +31,7 @@ profiles:
       <p>Universidad Tecnológica de Bolívar</p>
       <p>memoreno@utb.edu.co</p>
   - align: left
-    image: andersson.jpg
+    image: andersson.png
     content: about_anderson.md
     image_circular: false # crops the image to make it circular
     more_info: >
