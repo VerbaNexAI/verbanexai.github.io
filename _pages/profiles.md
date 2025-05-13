@@ -39,7 +39,7 @@ profiles:
       <p>amorillo@utb.edu.co</p> 
   - align: right
     image: sin_foto.jpg
-    content: about_daniel_peña.md
+    content: about_daniel_pena.md
     image_circular: false # crops the image to make it circular
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
