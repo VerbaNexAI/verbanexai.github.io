@@ -23,7 +23,7 @@ profiles:
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>jcmartinezs@utb.edu.co</p>
-  - align: left
+  - align: right
     image: melissa_moreno.jpg
     content: about_melissa_moreno.md
     image_circular: false # crops the image to make it circular
@@ -37,7 +37,7 @@ profiles:
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>amorillo@utb.edu.co</p> 
-  - align: left
+  - align: right
     image: sin_foto.jpg
     content: about_daniel_peña.md
     image_circular: false # crops the image to make it circular
