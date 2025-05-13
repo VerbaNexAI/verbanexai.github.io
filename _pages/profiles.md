@@ -31,13 +31,20 @@ profiles:
       <p>Universidad Tecnológica de Bolívar</p>
       <p>memoreno@utb.edu.co</p>
   - align: left
+    image: andrea_menco.jpg
+    content: about_andrea_menco.md
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <p>Universidad Tecnológica de Bolívar</p>
+      <p>amenco@utb.edu.co</p>      
+  - align: right
     image: andersson.png
     content: about_anderson.md
     image_circular: false # crops the image to make it circular
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>amorillo@utb.edu.co</p> 
-  - align: right
+  - align: left
     image: sin_foto.jpg
     content: about_daniel_pena.md
     image_circular: false # crops the image to make it circular
