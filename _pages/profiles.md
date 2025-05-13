@@ -24,13 +24,6 @@ profiles:
       <p>Universidad Tecnológica de Bolívar</p>
       <p>jcmartinezs@utb.edu.co</p>
   - align: left
-    image: andrea_menco.jpg
-    content: about_andrea_menco.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>Universidad Tecnológica de Bolívar</p>
-      <p>amenco@utb.edu.co</p> 
-  - align: left
     image: melissa_moreno.jpg
     content: about_melissa_moreno.md
     image_circular: false # crops the image to make it circular
