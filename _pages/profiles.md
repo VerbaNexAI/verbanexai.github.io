@@ -16,6 +16,7 @@ profiles:
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>epuerta@utb.edu.co</p>
+      
   - align: left
     image: juan_carlos_martinez_santos.jpg
     content: about_juan_carlos_martinez.md
@@ -23,28 +24,40 @@ profiles:
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>jcmartinezs@utb.edu.co</p>
-  - align: right
+      
+     - align: right
+    image: jairo_serrano.png
+    content: about_jairo_serrano.md
+    image_circular: false # crops the image to make it circular
+    more_info: >
+      <p>Universidad Tecnológica de Bolívar</p>
+      <p>jserrano@utb.edu.co</p>   
+      
+  - align: left
     image: melissa_moreno.jpg
     content: about_melissa_moreno.md
     image_circular: false # crops the image to make it circular
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>memoreno@utb.edu.co</p>
-  - align: left
+      
+  - align: right
     image: andrea_menco.jpg
     content: about_andrea_menco.md
     image_circular: false # crops the image to make it circular
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
-      <p>amenco@utb.edu.co</p>      
-  - align: right
+      <p>amenco@utb.edu.co</p>   
+      
+  - align: left
     image: andersson.png
     content: about_anderson.md
     image_circular: false # crops the image to make it circular
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>amorillo@utb.edu.co</p> 
-  - align: left
+      
+  - align: right
     image: sin_foto.jpg
     content: about_daniel_pena.md
     image_circular: false # crops the image to make it circular
