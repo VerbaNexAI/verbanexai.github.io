@@ -23,7 +23,7 @@ profiles:
     more_info: >
       <p>Universidad Tecnológica de Bolívar</p>
       <p>jcmartinezs@utb.edu.co</p>
-     - align: right
+  - align: right
     image: jairo_serrano.png
     content: about_jairo_serrano.md
     image_circular: false # crops the image to make it circular
