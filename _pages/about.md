@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations. Universidad Tecnológica de Bolívar, School
 
 profile:
   align: right
-  image: VerbaNexAI.png
+  image: VerbaNexIA_new.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>School of digital transformation</p>
