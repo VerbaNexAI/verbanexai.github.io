@@ -442,9 +442,9 @@ ninja.data = [{
           description: "Phonesthemes Encoder from Transformer Embedding Representation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-early-detection-of-depression-and-anxiety",
-          title: 'Early Detection of Depression and Anxiety',
-          description: "Multimodal System for Early Detection of Depression and Anxiety in University Population",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
