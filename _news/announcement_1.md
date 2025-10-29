@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Hemos participado en IberLEF 2025. Nuestros trabajos presentados están disponibles en la sección <a href='/publications/'>Publications</a>"
+Hemos participado en IberLEF 2025. Nuestros trabajos presentados están disponibles en la sección <a href='https://verbanexai.github.io/publications/'>Publications</a>"
