@@ -4,7 +4,7 @@ title: Early Detection of Depression and Anxiety
 description: Multimodal System for Early Detection of Depression and Anxiety in University Population
 img: assets/img/banner-thesis-jeison.jpg
 importance: 2
-category: work
+category: Master's degree
 giscus_comments: true
 ---
 
