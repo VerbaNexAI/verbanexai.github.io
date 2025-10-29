@@ -1,219 +1,217 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Early Detection of Depression and Anxiety
+description:Multimodal System for Early Detection of Depression and Anxiety in University Population
 img: assets/img/3.jpg
 importance: 2
 category: work
 giscus_comments: true
 ---
 
-# 🧠 Sistema Multimodal para la Detección Temprana de Depresión y Ansiedad en Población Universitaria
+# 🧠 Multimodal System for Early Detection of Depression and Anxiety in University Population
 
-##  Contexto: La Crisis Silenciosa en Educación Superior
+## Context: The Silent Crisis in Higher Education
 
-La salud mental en el ámbito universitario representa uno de los desafíos más urgentes en el panorama de salud pública contemporáneo. Estudios recientes en Latinoamérica revelan prevalencias alarmantes que superan el 60% en síntomas depresivos y de ansiedad entre estudiantes de educación superior. En Colombia, específicamente, el 35% de jóvenes entre 18 y 26 años reportaron ideación suicida durante la pandemia, con una probabilidad cuatro veces mayor comparada con adultos de mayor edad.
+Mental health in the university setting represents one of the most urgent challenges in contemporary public health. Recent studies in Latin America reveal alarming prevalence rates exceeding 60% for depressive and anxiety symptoms among higher education students. In Colombia specifically, 35% of young people between 18 and 26 years old reported suicidal ideation during the pandemic, with a probability four times higher compared to older adults.
 
-**El problema se agrava** por la escasez crítica de recursos profesionales en salud mental, con solo 3.5 psiquiatras por cada 100,000 habitantes en el país, limitando severamente el acceso a evaluaciones especializadas oportunas.
+**The problem is aggravated** by the critical shortage of professional mental health resources, with only 3.5 psychiatrists per 100,000 inhabitants in the country, severely limiting access to timely specialized evaluations.
 
 ```mermaid
 graph TD
-    A[Crisis de Salud Mental<br>en Universitarios] --> B[Latinoamérica:<br>60-71% Prevalencia]
-    A --> C[Colombia:<br>35% Ideación Suicida]
-    A --> D[Escasez Crítica:<br>3.5 Psiquiatras/100k hab]
+    A[Mental Health Crisis<br>in University Students] --> B[Latin America:<br>60-71% Prevalence]
+    A --> C[Colombia:<br>35% Suicidal Ideation]
+    A --> D[Critical Shortage:<br>3.5 Psychiatrists/100k inhab]
     
-    B --> E[Limitaciones<br>Detección Tradicional]
+    B --> E[Limitations of<br>Traditional Detection]
     C --> E
     D --> E
     
-    E --> F[Subjetividad]
-    E --> G[Escalabilidad Limitada]
-    E --> H[Monitoreo Discontinuo]
+    E --> F[Subjectivity]
+    E --> G[Limited Scalability]
+    E --> H[Discontinuous Monitoring]
 ```
 
-##  Nuestra Propuesta: Enfoque Multimodal Integrado
+## Our Proposal: Integrated Multimodal Approach
 
-Frente a estas limitaciones, desarrollamos un sistema de inteligencia artificial que integra análisis simultáneo de texto, audio y video para la detección temprana de indicadores de depresión y ansiedad. La premisa fundamental es que los trastornos de salud mental se manifiestan de manera heterogénea a través de múltiples canales comportamentales, y la integración multimodal permite capturar esta complejidad de manera más comprehensiva.
+Faced with these limitations, we developed an artificial intelligence system that integrates simultaneous analysis of text, audio, and video for early detection of depression and anxiety indicators. The fundamental premise is that mental health disorders manifest heterogeneously through multiple behavioral channels, and multimodal integration allows capturing this complexity more comprehensively.
 
-**La evidencia científica** respalda este enfoque: estudios recientes demuestran mejoras de hasta 25% en métricas de precisión al integrar modalidades múltiples comparado con sistemas unimodales. Esto se debe a que diferentes modalidades capturan aspectos complementarios de las manifestaciones sintomáticas.
+**Scientific evidence** supports this approach: recent studies demonstrate improvements of up to 25% in accuracy metrics when integrating multiple modalities compared to unimodal systems. This is because different modalities capture complementary aspects of symptomatic manifestations.
 
 ```mermaid
 graph LR
-    T[Texto<br>Análisis Semántico] --> F[Fusión<br>Multimodal]
-    A[Audio<br>Características Acústicas] --> F
-    V[Video<br>Expresiones Faciales] --> F
+    T[Text<br>Semantic Analysis] --> F[Multimodal<br>Fusion]
+    A[Audio<br>Acoustic Features] --> F
+    V[Video<br>Facial Expressions] --> F
     
-    F --> D[Detector<br>Indicadores]
-    D --> R[Resultados<br>Priorización]
+    F --> D[Indicator<br>Detector]
+    D --> R[Results<br>Prioritization]
 ```
 
-###  Fundamentos Científicos por Modalidad
+### Scientific Foundations by Modality
 
-**Análisis de Texto:** Examina patrones lingüísticos característicos de estados depresivos y ansiosos, incluyendo vocabulario predominantemente negativo, expresiones de autocrítica persistente, y patrones de pensamiento rumiativo. Utilizamos modelos BERT en español fine-tuned para contexto clínico-educativo.
+**Text Analysis:** Examines linguistic patterns characteristic of depressive and anxious states, including predominantly negative vocabulary, persistent self-critical expressions, and ruminative thinking patterns. We use Spanish BERT models fine-tuned for clinical-educational context.
 
-**Procesamiento de Audio:** Captura características paralingüísticas como voz monótona, pausas prolongadas, reducción en la variación tonal, y velocidad del habla disminuida. Implementamos extractores de características acústicas avanzados como MFCC y eGeMAPS combinados con modelos pre-entrenados como Wav2Vec 2.0.
+**Audio Processing:** Captures paralinguistic characteristics such as monotonous voice, prolonged pauses, reduced tonal variation, and decreased speech rate. We implement advanced acoustic feature extractors like MFCC and eGeMAPS combined with pre-trained models like Wav2Vec 2.0.
 
-**Análisis Visual:** Detecta cambios en expresiones faciales mediante el seguimiento de Unidades de Acción Facial (FAUs), frecuencia reducida de sonrisas genuinas, expresiones vacías o fruncidas, y patrones de mirada. Empleamos OpenFace para la extracción robusta de biomarcadores visuales.
+**Visual Analysis:** Detects changes in facial expressions through tracking of Facial Action Units (FAUs), reduced frequency of genuine smiles, empty or furrowed expressions, and gaze patterns. We employ OpenFace for robust extraction of visual biomarkers.
 
-##  Arquitectura del Sistema
+## System Architecture
 
-El sistema sigue una arquitectura modular que permite el procesamiento independiente de cada modalidad antes de la integración mediante mecanismos de fusión avanzados. Esta aproximación garantiza que se preserve la información específica de cada canal mientras se capturan las correlaciones inter-modales.
+The system follows a modular architecture that allows independent processing of each modality before integration through advanced fusion mechanisms. This approach ensures that specific information from each channel is preserved while capturing inter-modal correlations.
 
-**Proceso de Integración:** Cada modalidad se procesa mediante redes neuronales especializadas, cuyas representaciones se combinan mediante mecanismos de atención multi-head que aprenden dinámicamente la importancia relativa de cada modalidad según el contexto específico y las características individuales del estudiante.
+**Integration Process:** Each modality is processed through specialized neural networks, whose representations are combined through multi-head attention mechanisms that dynamically learn the relative importance of each modality according to the specific context and individual student characteristics.
 
 ```mermaid
 flowchart TD
-    A[Entrada Multimodal<br>Texto + Audio + Video] --> B[Extracción de Características]
+    A[Multimodal Input<br>Text + Audio + Video] --> B[Feature Extraction]
     
-    B --> C1[Modelo de Texto<br>BERT Español]
-    B --> C2[Modelo de Audio<br>Wav2Vec 2.0 + MFCC]
-    B --> C3[Modelo de Video<br>OpenFace + FAUs]
+    B --> C1[Text Model<br>Spanish BERT]
+    B --> C2[Audio Model<br>Wav2Vec 2.0 + MFCC]
+    B --> C3[Video Model<br>OpenFace + FAUs]
     
-    C1 --> D[Fusión con Atención Multi-head]
+    C1 --> D[Fusion with Multi-head Attention]
     C2 --> D
     C3 --> D
     
-    D --> E[Clasificador<br>Depresión/Ansiedad]
-    E --> F[Salida:<br>Indicadores + Priorización]
+    D --> E[Classifier<br>Depression/Anxiety]
+    E --> F[Output:<br>Indicators + Prioritization]
 ```
 
-##  Metodología de Desarrollo
+## Development Methodology
 
-El proyecto sigue la metodología de **Design Science Research**, un enfoque iterativo que garantiza el desarrollo sistemático de artefactos tecnológicos con aplicabilidad práctica en dominios específicos. Esta metodología se estructura en cuatro fases principales que guían el proceso desde la identificación del problema hasta la validación final del sistema.
+The project follows the **Design Science Research** methodology, an iterative approach that ensures systematic development of technological artifacts with practical applicability in specific domains. This methodology is structured in four main phases that guide the process from problem identification to final system validation.
 
-**Característica clave** de este enfoque es su naturaleza iterativa, permitiendo el refinamiento progresivo basado en evaluación empírica continua y retroalimentación de expertos en cada etapa del desarrollo.
+**Key characteristic** of this approach is its iterative nature, allowing progressive refinement based on continuous empirical evaluation and expert feedback at each development stage.
 
 ```mermaid
 graph TB
-    P1[ Revisión Literatura<br>y Definición del Problema] --> P2[ Protocolo Ético<br>y Consentimiento]
+    P1[Literature Review<br>and Problem Definition] --> P2[Ethical Protocol<br>and Consent]
     
-    P2 --> P3A[ Reclutamiento<br>Participantes]
-    P2 --> P3B[ Recolección<br>Datos Multimodales]
-    P2 --> P3C[ Etiquetado<br>PHQ-9/GAD-7]
+    P2 --> P3A[Participant<br>Recruitment]
+    P2 --> P3B[Multimodal Data<br>Collection]
+    P2 --> P3C[Labeling<br>PHQ-9/GAD-7]
     
-    P3A & P3B & P3C --> P4[ Corpus Multimodal<br>Etiquetado]
+    P3A & P3B & P3C --> P4[Labeled Multimodal<br>Corpus]
     
-    P4 --> P5A[ Entrenamiento<br>Modelos por Modalidad]
-    P4 --> P5B[ Desarrollo<br>Estrategias Fusión]
-    P4 --> P5C[ Optimización<br>Hiperparámetros]
+    P4 --> P5A[Model Training<br>by Modality]
+    P4 --> P5B[Fusion Strategies<br>Development]
+    P4 --> P5C[Hyperparameter<br>Optimization]
     
-    P5A & P5B & P5C --> P6[ Sistema Integrado<br>API + Interfaz]
+    P5A & P5B & P5C --> P6[Integrated System<br>API + Interface]
     
-    P6 --> P7[ Validación<br>con Expertos]
-    P7 --> P8[ Evaluación Final<br>y Documentación]
+    P6 --> P7[Validation<br>with Experts]
+    P7 --> P8[Final Evaluation<br>and Documentation]
 ```
 
-### Fase 1: Identificación del Problema
-Comprende una revisión sistemática de literatura sobre sistemas multimodales de IA para detección de depresión y ansiedad, utilizando la técnica ProKnow-C para selección y análisis estructurado de bibliografía relevante.
+### Phase 1: Problem Identification
+Comprises a systematic literature review on multimodal AI systems for depression and anxiety detection, using the ProKnow-C technique for structured selection and analysis of relevant bibliography.
 
-### Fase 2: Definición de Objetivos
-Establece los requisitos funcionales y no funcionales del sistema, junto con el diseño arquitectónico detallado que considera aspectos de modularidad, mantenibilidad y adaptabilidad para futuras extensiones.
+### Phase 2: Objective Definition
+Establishes the functional and non-functional requirements of the system, along with the detailed architectural design that considers aspects of modularity, maintainability, and adaptability for future extensions.
 
-### Fase 3: Diseño y Desarrollo Iterativo
-Se estructura en cuatro iteraciones especializadas:
-- **Iteración 1:** Protocolo ético y procesamiento de datos
-- **Iteración 2:** Construcción del corpus multimodal
-- **Iteración 3:** Desarrollo de modelos de fusión
-- **Iteración 4:** Integración y refinamiento del sistema
+### Phase 3: Iterative Design and Development
+Structured in four specialized iterations:
+- **Iteration 1:** Ethical protocol and data processing
+- **Iteration 2:** Multimodal corpus construction
+- **Iteration 3:** Fusion model development
+- **Iteration 4:** System integration and refinement
 
-### Fase 4: Demostración y Validación
-Incluye evaluación empírica con datos de prueba, análisis comparativo con métodos del estado del arte, y pruebas de usabilidad con profesionales de salud mental para validar la aplicabilidad práctica.
+### Phase 4: Demonstration and Validation
+Includes empirical evaluation with test data, comparative analysis with state-of-the-art methods, and usability testing with mental health professionals to validate practical applicability.
 
-## 🎓 Aplicación en Contexto Universitario
+## Application in University Context
 
-El sistema está diseñado específicamente para entornos universitarios, considerando las particularidades demográficas, culturales y logísticas de esta población. La implementación se concibe como una herramienta de cribado de primera línea que complementa, no reemplaza, la evaluación profesional especializada.
+The system is specifically designed for university environments, considering the demographic, cultural, and logistical particularities of this population. The implementation is conceived as a first-line screening tool that complements, does not replace, specialized professional evaluation.
 
-**Flujo de intervención:** Los estudiantes interactúan con el sistema mediante sesiones breves donde responden preguntas abiertas mientras se capturan sus respuestas en texto, audio y video. El sistema analiza estas señales y genera un perfil de riesgo que permite la priorización inteligente de casos según la severidad de los indicadores detectados.
+**Intervention flow:** Students interact with the system through brief sessions where they answer open questions while their responses are captured in text, audio, and video. The system analyzes these signals and generates a risk profile that allows intelligent case prioritization according to the severity of detected indicators.
 
 ```mermaid
 graph LR
-    E[Estudiante] --> S[Sistema Multimodal]
+    E[Student] --> S[Multimodal System]
     
-    S --> A[Análisis en Tiempo Real]
+    S --> A[Real-time Analysis]
     
-    A --> D1[Indicadores Leves<br>Seguimiento Automatizado]
-    A --> D2[Indicadores Moderados<br>Derivación Programada]
-    A --> D3[Indicadores Graves<br>Priorización Inmediata]
+    A --> D1[Mild Indicators<br>Automated Monitoring]
+    A --> D2[Moderate Indicators<br>Scheduled Referral]
+    A --> D3[Severe Indicators<br>Immediate Prioritization]
     
-    D1 --> R[Optimización Recursos<br>de Bienestar Universitario]
+    D1 --> R[Resource Optimization<br>University Welfare]
     D2 --> R
     D3 --> R
 ```
 
-**Población objetivo inicial:** Estudiantes de Ingeniería de Sistemas y Psicología de la Universidad Tecnológica de Bolívar, con potencial de expansión a otras facultades y instituciones.
+**Initial target population:** Systems Engineering and Psychology students from Universidad Tecnológica de Bolívar, with potential for expansion to other faculties and institutions.
 
-## 🔬 Contribución Científica y Técnica
+## Scientific and Technical Contribution
 
-Este proyecto representa varias contribuciones significativas al campo de la detección automatizada de problemas de salud mental:
+This project represents several significant contributions to the field of automated mental health problem detection:
 
-**Innovación técnica:** Desarrollo de estrategias de fusión multimodal adaptativas que ajustan dinámicamente los pesos de cada modalidad según patrones individuales, superando las limitaciones de enfoques de fusión fijos.
+**Technical innovation:** Development of adaptive multimodal fusion strategies that dynamically adjust the weights of each modality according to individual patterns, overcoming the limitations of fixed fusion approaches.
 
-**Contribución de datos:** Creación del primer corpus multimodal en español específicamente para contexto universitario colombiano, etiquetado con escalas validadas (PHQ-9 y GAD-7) y disponible para la comunidad científica.
+**Data contribution:** Creation of the first multimodal corpus in Spanish specifically for Colombian university context, labeled with validated scales (PHQ-9 and GAD-7) and available to the scientific community.
 
-**Avance metodológico:** Establecimiento de protocolos éticos especializados para recolección y procesamiento de datos multimodales sensibles en entornos educativos.
+**Methodological advancement:** Establishment of specialized ethical protocols for collection and processing of sensitive multimodal data in educational environments.
 
 ```mermaid
 xychart-beta
-    title "Comparación de Precisión entre Enfoques Unimodales y Multimodal"
-    x ["Solo Texto", "Solo Audio", "Solo Video", "Multimodal"]
+    title "Accuracy Comparison Between Unimodal and Multimodal Approaches"
+    x ["Text Only", "Audio Only", "Video Only", "Multimodal"]
     y [65, 58, 62, 82]
     bar [55, 50, 53, 75]
 ```
 
-##  Consideraciones Éticas y de Privacidad
+## Ethical and Privacy Considerations
 
-El desarrollo del sistema incorpora desde su diseño consideraciones éticas fundamentales para garantizar la protección de los participantes y el uso responsable de la tecnología.
+The system development incorporates from its design fundamental ethical considerations to guarantee participant protection and responsible technology use.
 
-**Consentimiento informado modal:** Diseñamos formularios de consentimiento específicos para cada tipo de dato (texto, audio, video), reconociendo que estas modalidades presentan diferentes niveles de sensibilidad y requerimientos de protección.
+**Modal informed consent:** We design specific consent forms for each data type (text, audio, video), recognizing that these modalities present different sensitivity levels and protection requirements.
 
-**Anonimización robusta:** Implementamos técnicas avanzadas de anonimización que garantizan la protección de la identidad de los participantes mediante eliminación de identificadores personales y ofuscación de atributos sensibles.
+**Robust anonymization:** We implement advanced anonymization techniques that guarantee protection of participant identity through elimination of personal identifiers and obfuscation of sensitive attributes.
 
-**Equidad algorítmica:** Incorporamos mecanismos para mitigar sesgos demográficos y garantizar que el sistema funcione de manera equitativa across diferentes grupos poblacionales.
+**Algorithmic equity:** We incorporate mechanisms to mitigate demographic biases and ensure the system functions equitably across different population groups.
 
 ```mermaid
 graph TD
-    A[Protección Participantes] --> B[Consentimiento Informado<br>por Modalidad]
-    A --> C[Anonimización<br>Datos Sensibles]
-    A --> D[Transparencia<br>en Uso de Datos]
+    A[Participant Protection] --> B[Informed Consent<br>by Modality]
+    A --> C[Anonymization of<br>Sensitive Data]
+    A --> D[Transparency in<br>Data Use]
     
-    B --> E[Equidad en Detección<br>Sin Sesgos Demográficos]
-    C --> F[Privacidad Preservada<br>Identidad Protegida]
-    D --> G[Confianza Institucional<br>y Estudiantil]
+    B --> E[Equity in Detection<br>Without Demographic Biases]
+    C --> F[Privacy Preserved<br>Identity Protected]
+    D --> G[Institutional and<br>Student Trust]
 ```
 
-##  Productos Esperados
+## Expected Products
 
-El proyecto generará varios productos tangibles que beneficiarán tanto a la comunidad académica como a las instituciones educativas:
+The project will generate several tangible products that will benefit both the academic community and educational institutions:
 
-| Producto | Descripción | Impacto |
+| Product | Description | Impact |
 |----------|-------------|---------|
-| **Protocolo Ético Multimodal** | Documento con procedimientos para recolección consensuada de datos multimodales, incluyendo formularios de consentimiento específicos por modalidad y protocolos de anonimización verificables. | Establece estándares replicables para investigación responsable con datos sensibles en entornos educativos. |
-| **Corpus Multimodal Etiquetado** | Base de datos con muestras de texto, audio y video de estudiantes universitarios, sincronizadas y etiquetadas con escalas PHQ-9 y GAD-7. | Primer recurso de este tipo en español para contexto universitario colombiano, facilitando futuras investigaciones. |
-| **Arquitecturas de Fusión Entrenadas** | Modelos de IA implementados y optimizados que incluyen sistemas de fusión temprana, intermedia y tardía, específicamente entrenados para detección de depresión y ansiedad. | Avance el estado del arte en técnicas de fusión multimodal para aplicaciones en salud mental. |
-| **Sistema Integrado de Detección** | Plataforma funcional con API para análisis en tiempo real, interfaz de usuario para visualización de resultados, y arquitectura modular escalable para implementación institucional. | Herramienta práctica que puede ser adoptada por servicios de bienestar universitario para optimizar sus recursos. |
+| **Multimodal Ethical Protocol** | Document with procedures for consensual multimodal data collection, including specific consent forms by modality and verifiable anonymization protocols. | Establishes replicable standards for responsible research with sensitive data in educational environments. |
+| **Labeled Multimodal Corpus** | Database with text, audio, and video samples from university students, synchronized and labeled with PHQ-9 and GAD-7 scales. | First resource of its kind in Spanish for Colombian university context, facilitating future research. |
+| **Trained Fusion Architectures** | Implemented and optimized AI models including early, intermediate, and late fusion systems, specifically trained for depression and anxiety detection. | Advances state of the art in multimodal fusion techniques for mental health applications. |
+| **Integrated Detection System** | Functional platform with API for real-time analysis, user interface for result visualization, and modular scalable architecture for institutional implementation. | Practical tool that can be adopted by university welfare services to optimize their resources. |
 
-##  Equipo de Investigación
+## Research Team
 
-**Investigador Principal:**  
-Jeison David Jiménez Alvear - Maestría en Ingeniería con Énfasis en Sistemas y Computación, Universidad Tecnológica de Bolívar. Asistente de investigación con experiencia en procesamiento de lenguaje natural y aprendizaje automático.
+**Principal Investigator:**  
+Jeison David Jiménez Alvear - Master's in Engineering with Emphasis on Systems and Computing, Universidad Tecnológica de Bolívar. Research assistant with experience in natural language processing and machine learning.
 
-**Directores:**  
-- **Dr. Edwin Puertas:** Arquitecto de Software de Inteligencia Artificial e Investigador en Procesamiento del Lenguaje Natural, con 20 años de experiencia en ámbito académico y profesional. Director de los Programas de Doctorado y Maestría en Ingeniería de la UTB.
-- **Dr. Juan Carlos Martínez:** Ingeniero Electrónico, Doctor por la Universidad de Northeastern, Boston. Becario Fulbright-DNP-Colciencias 2007. Investigador y docente en la UTB desde 2004.
-- **Dra. Karol Gutiérrez:** Psicóloga, Magister en Neuropsicología y Doctora en Neuropsicología por la Universidad de Salamanca. Especialista en desarrollo de procesos cognitivos y neurociencias aplicadas a la educación.
+**Directors:**  
+- **Dr. Edwin Puertas:** Artificial Intelligence Software Architect and Researcher in Natural Language Processing, with 20 years of experience in academic and professional fields. Director of Doctoral and Master's Programs in Engineering at UTB.
+- **Dr. Juan Carlos Martínez:** Electronic Engineer, Doctor from Northeastern University, Boston. Fulbright-DNP-Colciencias Fellow 2007. Researcher and professor at UTB since 2004.
+- **Dr. Karol Gutiérrez:** Psychologist, Master in Neuropsychology and Doctor in Neuropsychology from University of Salamanca. Specialist in development of cognitive processes and neuroscience applied to education.
 
-##  Impacto Esperado
+## Expected Impact
 
-El desarrollo exitoso de este sistema multimodal tiene el potencial de generar impactos significativos en múltiples dimensiones:
+The successful development of this multimodal system has the potential to generate significant impacts in multiple dimensions:
 
-**Impacto en Salud Estudiantil:** Detección más temprana y precisa de estudiantes en riesgo, permitiendo intervenciones oportunas que pueden prevenir la progresión de síntomas y reducir casos de crisis de salud mental no atendidas.
+**Impact on Student Health:** Earlier and more accurate detection of at-risk students, allowing timely interventions that can prevent symptom progression and reduce cases of unattended mental health crises.
 
-**Impacto Académico:** Reducción potencial de deserción académica relacionada con problemas de salud mental, mediante la identificación y apoyo proactivo a estudiantes que experimentan dificultades.
+**Academic Impact:** Potential reduction of academic dropout related to mental health problems, through identification and proactive support of students experiencing difficulties.
 
-**Impacto Institucional:** Optimización de los limitados recursos de bienestar universitario mediante la priorización inteligente de casos, asegurando que los estudiantes con mayor necesidad reciban atención oportuna.
+**Institutional Impact:** Optimization of limited university welfare resources through intelligent case prioritization, ensuring students with greatest need receive timely attention.
 
-**Impacto Científico:** Avance del estado del arte en detección multimodal de problemas de salud mental, particularmente en contextos de habla hispana y entornos educativos.
+**Scientific Impact:** Advancement of state of the art in multimodal detection of mental health problems, particularly in Spanish-speaking contexts and educational environments.
 
-**Impacto Social:** Establecimiento de estándares éticos y técnicos para el uso responsable de inteligencia artificial en aplicaciones sensibles como la salud mental, creando precedentes para futuras iniciativas similares.
-
----
+**Social Impact:** Establishment of ethical and technical standards for responsible use of artificial intelligence in sensitive applications like mental health, creating precedents for similar future initiatives.
