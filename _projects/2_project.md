@@ -269,7 +269,7 @@ The system is specifically designed for university environments, considering the
 </div>
 
 **Initial target population:** Systems Engineering and Psychology students from Universidad Tecnológica de Bolívar, with potential for expansion to other faculties and institutions.
----
+
 ## Ethical and Privacy Considerations
 
 The system development incorporates from its design fundamental ethical considerations to guarantee participant protection and responsible technology use.
