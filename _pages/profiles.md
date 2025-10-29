@@ -52,7 +52,7 @@ profiles:
       <p>Universidad Tecnológica de Bolívar</p>
       <p>amorillo@utb.edu.co</p>        
   - align: right
-    image: andersson.png
+    image: jeison_jimenez.jpg
     content: about_jeison.md
     image_circular: false # crops the image to make it circular
     more_info: >
