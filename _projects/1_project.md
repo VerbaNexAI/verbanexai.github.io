@@ -1,7 +1,7 @@
 ---
 layout: page
-title: PETER - Phonesthemes Encoder from Transformer Embedding Representation
-description: transformer-based architecture designed to process and understand phonesthemes (sound-meaning patterns) in text using a multi-layered embedding approach
+title: PETER
+description: Phonesthemes Encoder from Transformer Embedding Representation
 img: assets/img/peter_architecture.png
 importance: 1
 category: Master's degree
