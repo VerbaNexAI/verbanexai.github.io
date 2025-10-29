@@ -432,8 +432,8 @@ ninja.data = [{
           section: "News",},{id: "news-we-participated-in-iberlef-2025-our-presentations-are-available-in-the-publication-section",
           title: 'We participated in IberLEF 2025. Our presentations are available in the publication section...',
           description: "",
-          section: "News",},{id: "news-cuando-la-emoción-no-se-escribe-se-escucha-el-error-invisible-de-la-ia",
-          title: 'Cuando la emoción no se escribe, se escucha - el error invisible de...',
+          section: "News",},{id: "news-when-emotion-isn-39-t-written-it-39-s-heard-the-invisible-error-of-ai",
+          title: 'When emotion isn&amp;#39;t written, it&amp;#39;s heard—the invisible error of AI',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
