@@ -426,18 +426,18 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-peter",
+          section: "News",},{id: "news-we-participated-in-iberlef-2025-our-presentations-are-available-in-the-publication-section",
+          title: 'We participated in IberLEF 2025. Our presentations are available in the publication section...',
+          description: "",
+          section: "News",},{id: "news-cuando-la-emoción-no-se-escribe-se-escucha-el-error-invisible-de-la-ia",
+          title: 'Cuando la emoción no se escribe, se escucha - el error invisible de...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "projects-peter",
           title: 'PETER',
           description: "Phonesthemes Encoder from Transformer Embedding Representation",
           section: "Projects",handler: () => {
@@ -495,11 +495,18 @@ ninja.data = [{
           window.open("mailto:%65%70%75%65%72%74%61@%75%74%62.%65%64%75.%63%6F", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-medium',
+        title: 'Medium',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://medium.com/@edwinpuertas", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-0758-1851", "_blank");
         },
       },{
         id: 'social-rss',
