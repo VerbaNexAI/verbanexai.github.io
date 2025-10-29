@@ -437,9 +437,9 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-peter",
+          title: 'PETER',
+          description: "Phonesthemes Encoder from Transformer Embedding Representation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-early-detection-of-depression-and-anxiety",
