@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We participated in IberLEF 2025. Our presentations are available in the publication section 
+We participated in IberLEF 2025 (Iberian Languages Evaluation Forum). Our presentations are available in the publication section 
