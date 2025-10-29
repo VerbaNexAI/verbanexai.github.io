@@ -495,20 +495,6 @@ ninja.data = [{
           window.open("mailto:%65%70%75%65%72%74%61@%75%74%62.%65%64%75.%63%6F", "_blank");
         },
       },{
-        id: 'social-medium',
-        title: 'Medium',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://medium.com/@edwinpuertas", "_blank");
-        },
-      },{
-        id: 'social-orcid',
-        title: 'ORCID',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://orcid.org/0000-0002-0758-1851", "_blank");
-        },
-      },{
         id: 'social-rss',
         title: 'RSS Feed',
         section: 'Socials',
