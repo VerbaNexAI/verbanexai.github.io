@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Cuando la emoción no se escribe, se escucha - el error invisible de la IA
+title: When emotion isn't written, it's heard—the invisible error of AI
 date: 2025-09-02 16:11:00-0400
 inline: false
 related_posts: false
 ---
 
-**Autor:** Edwin Puertas
-**Fecha:** 2025-09-02
+**Author:** Edwin Puertas
+**Date:** 2025-09-02
 
-Los modelos de IA tradicionales analizan solo el contenido textual, pero fallan en capturar las emociones implícitas en cómo escribimos (repeticiones, mayúsculas, emojis). La investigación doctoral del autor integra características fonéticas y dimensiones emocionales al análisis, demostrando que esta aproximación multimodal mejora significativamente la detección de emociones en texto, alcanzando un F1 Score del 80% y abriendo camino hacia IA más empáticas y contextualmente conscientes.
+Traditional AI models analyze only textual content, but fail to capture the emotions implicit in how we write (repetitions, capital letters, emojis). Dr. Edwin Puertas' doctoral research integrates phonetic characteristics and emotional dimensions into the analysis, demonstrating that this multimodal approach significantly improves emotion detection in text, achieving an F1 Score of 80% and paving the way for more empathetic and contextually aware AI.
 
-[Artículo completo en Medium](https://medium.com/@edwinpuertas/cuando-la-emoci%C3%B3n-no-se-escribe-se-escucha-el-error-invisible-de-la-ia-13f9bacde704)
+[Full article on Medium](https://medium.com/@edwinpuertas/cuando-la-emoci%C3%B3n-no-se-escribe-se-escucha-el-error-invisible-de-la-ia-13f9bacde704)
