@@ -222,7 +222,7 @@ Structured in four specialized iterations:
 ### Phase 4: Demonstration and Validation
 
 Includes empirical evaluation with test data, comparative analysis with state-of-the-art methods, and usability testing with mental health professionals to validate practical applicability.
----
+
 ## Application in University Context
 
 The system is specifically designed for university environments, considering the demographic, cultural, and logistical particularities of this population. The implementation is conceived as a first-line screening tool that complements, does not replace, specialized professional evaluation.
