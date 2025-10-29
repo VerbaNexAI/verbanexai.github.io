@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Early Detection of Depression and Anxiety
-description:Multimodal System for Early Detection of Depression and Anxiety in University Population
+description: Multimodal System for Early Detection of Depression and Anxiety in University Population
 img: assets/img/3.jpg
 importance: 2
 category: work
