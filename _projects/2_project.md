@@ -232,17 +232,17 @@ The system is specifically designed for university environments, considering the
 <div class="diagram-container">
   <div class="intervention-flow">
     <div class="intervention-step">
-      <div class="step-icon">👤</div>
+      <div class="step-icon"></div>
       <div class="step-text">Student</div>
     </div>
     <div class="step-arrow">→</div>
     <div class="intervention-step">
-      <div class="step-icon">🤖</div>
+      <div class="step-icon"></div>
       <div class="step-text">Multimodal System</div>
     </div>
     <div class="step-arrow">→</div>
     <div class="intervention-step">
-      <div class="step-icon">⚡</div>
+      <div class="step-icon"></div>
       <div class="step-text">Real-time Analysis</div>
     </div>
     <div class="step-arrow">→</div>
@@ -262,7 +262,7 @@ The system is specifically designed for university environments, considering the
     </div>
     <div class="step-arrow">→</div>
     <div class="intervention-step final">
-      <div class="step-icon">📊</div>
+      <div class="step-icon"></div>
       <div class="step-text">Resource Optimization<br>University Welfare</div>
     </div>
   </div>
