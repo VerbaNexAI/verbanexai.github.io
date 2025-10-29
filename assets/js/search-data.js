@@ -426,8 +426,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-we-participated-in-iberlef-2025-our-presentations-are-available-in-the-publication-section",
-          title: 'We participated in IberLEF 2025. Our presentations are available in the publication section...',
+            },},{id: "news-we-participated-in-iberlef-2025-iberian-languages-evaluation-forum-our-presentations-are-available-in-the-publication-section",
+          title: 'We participated in IberLEF 2025 (Iberian Languages Evaluation Forum). Our presentations are available...',
           description: "",
           section: "News",},{id: "news-we-participated-in-clef-2025-conference-and-labs-of-the-evaluation-forum-our-presentations-are-available-in-the-publication-section",
           title: 'We participated in CLEF 2025 (Conference and Labs of the Evaluation Forum). Our...',
