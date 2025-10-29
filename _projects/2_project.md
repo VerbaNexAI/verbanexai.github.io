@@ -37,7 +37,7 @@ Mental health in the university setting represents one of the most urgent challe
     </div>
   </div>
 </div>
-
+---
 ## Our Proposal: Integrated Multimodal Approach
 
 Faced with these limitations, we developed an artificial intelligence system that integrates simultaneous analysis of text, audio, and video for early detection of depression and anxiety indicators. The fundamental premise is that mental health disorders manifest heterogeneously through multiple behavioral channels, and multimodal integration allows capturing this complexity more comprehensively.
@@ -70,7 +70,7 @@ Faced with these limitations, we developed an artificial intelligence system tha
     </div>
   </div>
 </div>
-
+---
 ### Scientific Foundations by Modality
 
 **Text Analysis:** Examines linguistic patterns characteristic of depressive and anxious states, including predominantly negative vocabulary, persistent self-critical expressions, and ruminative thinking patterns. We use Spanish BERT models fine-tuned for clinical-educational context.
@@ -126,7 +126,7 @@ The system follows a modular architecture that allows independent processing of 
     </div>
   </div>
 </div>
-
+---
 ## Development Methodology
 
 The project follows the **Design Science Research** methodology, an iterative approach that ensures systematic development of technological artifacts with practical applicability in specific domains. This methodology is structured in four main phases that guide the process from problem identification to final system validation.
@@ -222,7 +222,7 @@ Structured in four specialized iterations:
 ### Phase 4: Demonstration and Validation
 
 Includes empirical evaluation with test data, comparative analysis with state-of-the-art methods, and usability testing with mental health professionals to validate practical applicability.
-
+---
 ## Application in University Context
 
 The system is specifically designed for university environments, considering the demographic, cultural, and logistical particularities of this population. The implementation is conceived as a first-line screening tool that complements, does not replace, specialized professional evaluation.
@@ -269,57 +269,7 @@ The system is specifically designed for university environments, considering the
 </div>
 
 **Initial target population:** Systems Engineering and Psychology students from Universidad Tecnológica de Bolívar, with potential for expansion to other faculties and institutions.
-
-## Scientific and Technical Contribution
-
-This project represents several significant contributions to the field of automated mental health problem detection:
-
-**Technical innovation:** Development of adaptive multimodal fusion strategies that dynamically adjust the weights of each modality according to individual patterns, overcoming the limitations of fixed fusion approaches.
-
-**Data contribution:** Creation of the first multimodal corpus in Spanish specifically for Colombian university context, labeled with validated scales (PHQ-9 and GAD-7) and available to the scientific community.
-
-**Methodological advancement:** Establishment of specialized ethical protocols for collection and processing of sensitive multimodal data in educational environments.
-
-<div class="chart-container">
-  <div class="accuracy-chart">
-    <div class="chart-title">Accuracy Comparison Between Unimodal and Multimodal Approaches</div>
-    <div class="chart-bars">
-      <div class="bar-container">
-        <div class="bar-label">Text Only</div>
-        <div class="bar-wrapper">
-          <div class="bar bar-1" style="width: 65%">
-            <span class="bar-value">65%</span>
-          </div>
-        </div>
-      </div>
-      <div class="bar-container">
-        <div class="bar-label">Audio Only</div>
-        <div class="bar-wrapper">
-          <div class="bar bar-2" style="width: 58%">
-            <span class="bar-value">58%</span>
-          </div>
-        </div>
-      </div>
-      <div class="bar-container">
-        <div class="bar-label">Video Only</div>
-        <div class="bar-wrapper">
-          <div class="bar bar-3" style="width: 62%">
-            <span class="bar-value">62%</span>
-          </div>
-        </div>
-      </div>
-      <div class="bar-container">
-        <div class="bar-label">Multimodal</div>
-        <div class="bar-wrapper">
-          <div class="bar bar-4" style="width: 82%">
-            <span class="bar-value">82%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+---
 ## Ethical and Privacy Considerations
 
 The system development incorporates from its design fundamental ethical considerations to guarantee participant protection and responsible technology use.
