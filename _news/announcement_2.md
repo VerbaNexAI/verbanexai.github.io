@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cuando la emoción no se escribe, se escucha: el error invisible de la IA
+title: Cuando la emoción no se escribe, se escucha - el error invisible de la IA
 date: 2025-09-02 16:11:00-0400
 inline: false
 related_posts: false
