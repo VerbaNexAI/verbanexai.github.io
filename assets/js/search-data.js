@@ -447,9 +447,9 @@ ninja.data = [{
           description: "Multimodal System for Early Detection of Depression and Anxiety in University Population",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-early-detection-of-depression-and-anxiety",
+          title: 'Early Detection of Depression and Anxiety',
+          description: "Multimodal System for Early Detection of Depression and Anxiety in University Population",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
