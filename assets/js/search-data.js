@@ -447,9 +447,9 @@ ninja.data = [{
           description: "Multimodal System for Early Detection of Depression and Anxiety in University Population",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-early-detection-of-depression-and-anxiety",
-          title: 'Early Detection of Depression and Anxiety',
-          description: "Multimodal System for Early Detection of Depression and Anxiety in University Population",
+            },},{id: "projects-ner-enhanced-machine-translation-for-gastronomic-texts",
+          title: 'NER-Enhanced Machine Translation for Gastronomic Texts',
+          description: "Entity-aware NER-NMT system for culturally accurate Spanish-English translation of gastronomic texts.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
