@@ -378,12 +378,6 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
-        document.querySelectorAll('.internal-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
-            });
-        });
         AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
 
         const themeBtn = document.getElementById('theme-toggle');
