@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | VerbaNexAI Lab</title>
+    <title>Blog | VerbaNexAI Lab</title>
 
     <script>
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -45,126 +45,34 @@
             transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
         }
 
-        body.page-loaded {
-            opacity: 1;
-        }
+        body.page-loaded { opacity: 1; }
+        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
 
-        h1, h2, h3, h4, h5, .navbar-brand {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; transition: opacity 0.5s ease; }
 
-        #particles-js {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transition: opacity 0.5s ease;
-        }
+        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .nav-link { position: relative; font-weight: 500; cursor: pointer; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: #0d6efd; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 80%; }
 
-        .navbar {
-            background: var(--nav-bg) !important;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
+        #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
 
-        .nav-link {
-            position: relative;
-            font-weight: 500;
-            cursor: pointer;
-        }
+        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; }
+        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0d6efd;
-            transition: width 0.3s ease;
-        }
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; }
+        .pub-card { position: relative; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+        .pub-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%); transition: transform 0.8s ease; }
+        .pub-card:hover::before { transform: translateX(100%); }
+        .pub-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12); border-color: rgba(13, 110, 253, 0.5); }
 
-        .nav-link:hover::after {
-            width: 80%;
-        }
+        .btn-custom { background: var(--btn-custom-bg); color: var(--bs-body-color); border: 1px solid var(--btn-custom-border); border-radius: 50px; transition: all 0.3s ease; }
+        .btn-custom:hover, .btn-custom.active { background: var(--btn-custom-hover); border-color: var(--btn-custom-hover); color: #fff; }
 
-        #theme-toggle {
-            font-size: 1.2rem;
-            background: none;
-            border: none;
-            color: inherit;
-            padding: 0 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-        #theme-toggle:hover {
-            transform: rotate(15deg) scale(1.1);
-        }
+        .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
 
-        .hero-section {
-            display: flex;
-            align-items: center;
-            background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%);
-            margin-top: 56px;
-        }
-
-        .text-gradient {
-            background: linear-gradient(90deg, #0d6efd, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 1rem;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(13, 110, 253, 0.5);
-            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1);
-        }
-
-        .btn-custom {
-            background: var(--btn-custom-bg);
-            color: var(--bs-body-color);
-            border: 1px solid var(--btn-custom-border);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background: var(--btn-custom-hover);
-            border-color: var(--btn-custom-hover);
-            color: #fff;
-        }
-
-        .news-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: transform 0.3s ease, border-color 0.3s;
-        }
-        .news-item:hover {
-            transform: translateX(8px);
-            border-left: 4px solid #0d6efd;
-        }
-
-        .abstract-text {
-            color: var(--text-muted-custom);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+        
     </style>
 </head>
 <body>
@@ -184,131 +92,44 @@
                     <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
                     <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
-                    </li>
+                    <!-- BLOG BUTTON ADDED HERE FOR ALL PAGES -->
+                    <li class="nav-item"><a class="nav-link internal-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     
-        <header class="hero-section pt-5 pb-5">
-            <div class="container text-center pt-5 mt-4" data-aos="fade-up">
-                <h1 class="display-3 fw-bold mb-4">VerbaNexAI <span class="text-gradient">Lab</span></h1>
-                <p class="lead mx-auto abstract-text mb-4" style="max-width: 900px; text-align: justify;">
-                    VerbaNexAI Lab is a research group of the Universidad Tecnológica de Bolívar (UTB) in Colombia, dedicated to translating cutting-edge artificial intelligence research into practical solutions for language understanding, image analysis, energy modeling and educational technologies. The Lab brings together expertise in natural language processing, computer vision and predictive analytics to generate actionable insights for automated inspection, efficient energy management and adaptive learning environments, all within an open collaboration and reproducible research framework.
-                </p>
-                <div class="mt-4 p-3 rounded d-inline-block" style="background: var(--btn-custom-bg); border: 1px solid var(--border-color);">
-                    <p class="mb-1 text-primary fw-bold">School of Digital Transformation</p>
-                    <p class="mb-1 abstract-text small">Parque Industrial y Tecnológico Carlos Vélez Pombo Km 1 Vía Turbaco</p>
-                    <p class="mb-0 abstract-text small">Cartagena de Indias, Colombia</p>
+<header class="hero-section pt-5 pb-3" style="min-height: 35vh;">
+    <div class="container text-center pt-5 mt-4" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">Lab <span class="text-gradient">Blog</span></h1>
+        <p class="lead abstract-text mb-2">Insights, tutorials, and thoughts from our research team.</p>
+    </div>
+</header>
+<section class="container py-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+            <article class="card p-4 p-lg-5 mb-5 pub-card border-primary" style="border-width: 1px;">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill px-3 py-2">Tutorial</span>
+                    <span class="text-secondary small">May 05, 2026</span>
                 </div>
-            </div>
-        </header>
-
-        <!-- News Section -->
-        <section class="container py-5">
-            <h2 class="h2 mb-4 fw-bold text-gradient" data-aos="fade-up">News</h2>
-            <div class="row g-3">
-                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-item p-3 p-md-4 d-flex flex-column flex-md-row align-items-start gap-3">
-                        <span class="badge bg-primary rounded-pill px-3 py-2">Sep 02, 2025</span>
-                        <div>
-                            <a href="https://verbanexai.github.io/news/announcement_2/" class="text-decoration-none h5 mb-0 fw-bold d-block mb-1" style="color: var(--bs-body-color);">When emotion isn't written, it's heard—the invisible error of AI</a>
-                        </div>
+                <h2 class="h3 fw-bold mb-3">Getting Started with Transformer Fine-Tuning</h2>
+                <div class="d-flex align-items-center mb-4">
+                    <img src="https://verbanexai.github.io/assets/img/edwin_puertas.png" alt="Author" class="rounded-circle me-3" width="40" height="40" style="object-fit:cover;">
+                    <div>
+                        <p class="mb-0 fw-medium">Dr. Edwin Puertas</p>
+                        <p class="mb-0 text-secondary small">Principal Investigator</p>
                     </div>
                 </div>
-                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="news-item p-3 p-md-4 d-flex flex-column flex-md-row align-items-start gap-3">
-                        <span class="badge bg-primary rounded-pill px-3 py-2">Jul 20, 2025</span>
-                        <div class="abstract-text mt-1 mt-md-0">
-                            We participated in CLEF 2025 (Conference and Labs of the Evaluation Forum). Our presentations are available in the publication section.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="news-item p-3 p-md-4 d-flex flex-column flex-md-row align-items-start gap-3">
-                        <span class="badge bg-primary rounded-pill px-3 py-2">Jul 15, 2025</span>
-                        <div class="abstract-text mt-1 mt-md-0">
-                            We participated in IberLEF 2025 (Iberian Languages Evaluation Forum). Our presentations are available in the publication section.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <p class="abstract-text mb-4">Fine-tuning large language models can seem daunting, but with modern libraries like Hugging Face Transformers, it has become highly accessible...</p>
+                <a href="/blog/getting-started/" class="btn btn-custom align-self-start internal-link">Read Full Post &rarr;</a>
+            </article>
+        </div>
+    </div>
+</section>
 
-        <!-- Selected Publications Section -->
-        <section class="container py-5 mb-5">
-            <h2 class="h2 mb-4 fw-bold text-gradient" data-aos="fade-up">Selected Publications</h2>
-            <div class="row g-4">
-
-                <!-- Pub 1 -->
-                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card p-4 p-lg-5">
-                        <div class="card-body p-0">
-                            <span class="badge bg-secondary mb-3">SemEval</span>
-                            <h4 class="card-title fw-bold mb-3">UTB-NLP at SemEval-2023 Task 3: Weirdness, Lexical Features for Detecting Categorical Framings, and Persuasion in Online News</h4>
-                            <p class="mb-1 text-primary fw-medium">Juan Cuadrado, Elizabeth Martinez, Anderson Morillo, and 4 more authors</p>
-                            <p class="abstract-text fw-semibold mb-3">Proc. of SemEval, 2023</p>
-                            <p class="abstract-text mb-0">Nowadays, persuasive messages are more and more frequent in social networks, which generates great concern in several communities, given that persuasion seeks to guide others towards the adoption of ideas, attitudes or actions that they consider to be beneficial to themselves. The efficient detection of news genre categories, detection of framing and detection of persuasion techniques requires several scientific disciplines, such as computational linguistics and sociology. Here we illustrate how we use lexical features given a news article, determine whether it is an opinion piece, aims to report factual news, or is satire. This paper presents a novel strategy for news based on Lexical Weirdness. The results are part of our participation in subtasks 1 and 2 in SemEval 2023 Task 3.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pub 2 -->
-                <div class="col-12" data-aos="fade-up" data-aos-delay="150">
-                    <div class="card p-4 p-lg-5">
-                        <div class="card-body p-0">
-                            <span class="badge bg-secondary mb-3">CLEF</span>
-                            <h4 class="card-title fw-bold mb-3">VerbaNexAI at CLEF 2025 JOKER Task 3: Multi-Model LLM Approach for Onomastic Wordplay Translation</h4>
-                            <p class="mb-1 text-primary fw-medium">Maria Paz Ramirez, Jeison D. Jimenez, Deyson Gómez Sánchez, and 2 more authors</p>
-                            <p class="abstract-text fw-semibold mb-3">In CEUR Workshop Proceedings, 2025</p>
-                            <p class="abstract-text mb-0">Our approach achieved first place in the CLEF 2025 JOKER Task 3 competition, outperforming all other participating teams and establishing new benchmarks for LLM-based creative translation systems. Testing five different models using advanced prompting strategies. Our methodology involved systematic prompt engineering with Chain-of-Thought reasoning and universe-specific translation patterns. ChatGPT-4o achieved the best performance with 29.5% exact matches and 30.6% accent-tolerant matches, resulting in an overall 60.1% success rate, demonstrating the potential of LLM-based approaches for creative multilingual wordplay translation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pub 3 -->
-                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card p-4 p-lg-5">
-                        <div class="card-body p-0">
-                            <span class="badge bg-secondary mb-3">CLEF</span>
-                            <h4 class="card-title fw-bold mb-3">Prediction of Human Preferences and Explanation Generation with LLM: An Approach Based on RAG, Few-Shot Learning, and Auto-CoT</h4>
-                            <p class="mb-1 text-primary fw-medium">Danileth Almanza-Gonzalez, Jairo E. Serrano, and Juan Carlos Martinez-Santos</p>
-                            <p class="abstract-text fw-semibold mb-3">In CEUR Workshop Proceedings, 2025</p>
-                            <p class="abstract-text mb-0">This study presents an advanced approach for predicting human preferences and generating explanations in large language models (LLMs) within the context of the "Preference Prediction" task of ELOQUENT Lab 2025. We implemented techniques such as Few-Shot Learning, Auto Chain-of-Thought (Auto-CoT), and Retrieval-Augmented Generation (RAG), evaluating multiple pre-trained models, from LLaMA-3 to distilgpt2. The system developed by the VerbaNexAI team achieved first place in the competition, standing out for its high performance in both safety (94.15%) and truthfulness (75.16%) criteria.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pub 4 -->
-                <div class="col-12" data-aos="fade-up" data-aos-delay="250">
-                    <div class="card p-4 p-lg-5">
-                        <div class="card-body p-0">
-                            <span class="badge bg-secondary mb-3">CLEF</span>
-                            <h4 class="card-title fw-bold mb-3">Hybrid Re-ranking for Biomedical Entity Linking using SapBERT Embeddings: A High-Performance System for BioNNE-L 2025-1</h4>
-                            <p class="mb-1 text-primary fw-medium">Daniel Peña Gnecco, Jairo E. Serrano, and Juan Carlos Martinez-Santos</p>
-                            <p class="abstract-text fw-semibold mb-3">In CEUR Workshop Proceedings, 2025</p>
-                            <p class="abstract-text mb-0">The BioNNE-L 2025-1 challenge advances biomedical entity linking (BEL) by mapping textual mentions to UMLS concepts, which is crucial for clinical and research applications. This study addresses Subtask 1 (English) with a novel SapBERT-based system. It integrates a hybrid re-ranking strategy combining cosine, Jaccard, and Levenshtein similarities, optimizing weights via grid search. Evaluated on the BioNNE-L development set, our system achieved an Accuracy@1 of 0.718, Accuracy@5 of 0.802, and MRR of 0.750. In the official competition, the VerbaNex AI Lab team secured first place in Accuracy@1 (0.70).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pub 5 -->
-                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card p-4 p-lg-5">
-                        <div class="card-body p-0">
-                            <span class="badge bg-secondary mb-3">Systems Soft Comput.</span>
-                            <h4 class="card-title fw-bold mb-3">Enhancing consistency in piping and instrumentation diagrams using DistilBERT and smart PID systems</h4>
-                            <p class="mb-1 text-primary fw-medium">F.S. Gómez-Vega, O. Acuña, Andrea C. Camargo, and 6 more authors</p>
-                            <p class="abstract-text fw-semibold mb-3">Systems and Soft Computing, 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
     <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
         <div class="container">
@@ -322,42 +143,22 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('page-loaded');
-        });
-
+        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
         document.querySelectorAll('.internal-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if (href && href.startsWith('/')) {
-                    e.preventDefault();
-                    document.body.classList.remove('page-loaded');
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 400); 
-                }
+                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
             });
         });
-
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 50
-        });
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
 
         const themeBtn = document.getElementById('theme-toggle');
-        function updateThemeIcon(theme) {
-            themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
-        }
+        function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
         updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
-
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-bs-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            document.documentElement.setAttribute('data-bs-theme', newTheme); localStorage.setItem('theme', newTheme); updateThemeIcon(newTheme);
         });
 
         particlesJS("particles-js", {
@@ -367,20 +168,10 @@
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": false },
                 "size": { "value": 3, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#0d6efd",
-                    "opacity": 0.3,
-                    "width": 1
-                },
+                "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.3, "width": 1 },
                 "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } }, "push": { "particles_nb": 3 } }
-            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } } },
             "retina_detect": true
         });
     </script>

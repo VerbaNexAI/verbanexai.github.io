@@ -67,8 +67,12 @@
         .pub-card:hover::before { transform: translateX(100%); }
         .pub-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12); border-color: rgba(13, 110, 253, 0.5); }
 
+        .btn-custom { background: var(--btn-custom-bg); color: var(--bs-body-color); border: 1px solid var(--btn-custom-border); border-radius: 50px; transition: all 0.3s ease; }
+        .btn-custom:hover, .btn-custom.active { background: var(--btn-custom-hover); border-color: var(--btn-custom-hover); color: #fff; }
+
         .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
 
+        
         /* Person Card Styles */
         .person-card { text-align: center; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
         .person-img-container { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; border: 4px solid var(--border-color); position: relative; transition: border-color 0.3s ease; }
@@ -79,6 +83,7 @@
         .person-bio { font-size: 0.9rem; color: var(--text-muted-custom); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
         .badge-institution { position: absolute; bottom: 0; background: var(--bg-color); border: 2px solid var(--border-color); color: var(--bs-body-color); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; transform: translateY(50%); z-index: 2; transition: all 0.3s ease;}
         .person-card:hover .badge-institution { border-color: #0d6efd; color: #0d6efd; }
+
     </style>
 </head>
 <body>
@@ -98,7 +103,8 @@
                     <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
                     <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
                     <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/blog/" style="color: #0d6efd;">Blog</a></li>
+                    <!-- BLOG BUTTON ADDED HERE FOR ALL PAGES -->
+                    <li class="nav-item"><a class="nav-link internal-link" href="/blog/">Blog</a></li>
                     <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
                 </ul>
             </div>
@@ -112,10 +118,7 @@
         <p class="lead abstract-text mb-2">Meet the researchers driving innovation at VerbaNexAI Lab.</p>
     </div>
 </header>
-
 <section class="container py-5 mb-5">
-
-    <!-- Principal Investigators -->
     <div class="d-flex align-items-center gap-3 mb-5 mt-2" data-aos="fade-right">
         <h2 class="h2 fw-bold mb-0 text-gradient">Principal Investigators</h2>
         <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
@@ -126,13 +129,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/edwin_puertas.png" alt="Dr. Edwin Puertas" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Edwin+Puertas&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Dr. Edwin Puertas</h3>
             <p class="person-title">Principal Investigator</p>
-            <p class="person-bio">Director of the Ph.D. and Master’s Programs in Engineering at Universidad Tecnológica de Bolívar and is an active member of the Artificial Intelligence Standards Committee. His work focuses on bridging the gap between academic research and practical industry applications, leading innovative projects in the field of Artificial Intelligence (AI).</p>
+            <p class="person-bio">Director of the Ph.D. and Master’s Programs in Engineering at Universidad Tecnológica de Bolívar and is an active member of the Artificial Intelligence Standards Committee.</p>
         </div>
     </div>
     
@@ -140,13 +144,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/juan_carlos_martinez_santos.jpg" alt="Dr. Juan Carlos Martinez" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Juan+Carlos+Martinez&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Dr. Juan Carlos Martinez</h3>
             <p class="person-title">Principal Investigator</p>
-            <p class="person-bio">Senior Researcher at VerbaNexAI Lab. Dr. Martinez has extensive experience directing research focused on predictive analytics, machine learning modeling, and applying NLP algorithms to solve complex data interpretation problems across multiple domains.</p>
+            <p class="person-bio">Senior Researcher at VerbaNexAI Lab. Dr. Martinez has extensive experience directing research focused on predictive analytics, machine learning modeling, and NLP algorithms.</p>
         </div>
     </div>
     
@@ -154,19 +159,18 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/jairo_serrano.png" alt="Dr. Jairo Serrano Castañeda" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Jairo+Serrano+Castañeda&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Dr. Jairo Serrano Castañeda</h3>
             <p class="person-title">Principal Investigator</p>
-            <p class="person-bio">Key faculty member leading the development of advanced neural network architectures and pushing boundaries in computational linguistics. He guides multiple lab initiatives and mentoring students towards contributing to high-level academic conferences.</p>
+            <p class="person-bio">Key faculty member leading the development of advanced neural network architectures and pushing boundaries in computational linguistics.</p>
         </div>
     </div>
     
     </div>
-
-    <!-- Graduate Researchers -->
     <div class="d-flex align-items-center gap-3 mb-5 mt-5" data-aos="fade-right">
         <h2 class="h2 fw-bold mb-0 text-gradient">Graduate Researchers</h2>
         <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
@@ -177,13 +181,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/melissa_moreno.jpg" alt="Melissa Moreno" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Melissa+Moreno&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Melissa Moreno</h3>
             <p class="person-title">Graduate Researcher</p>
-            <p class="person-bio">Researching semantic matching of multilingual job titles and enhancing vocational guidance with machine learning models. Regular participant in SemEval and CLEF competitions.</p>
+            <p class="person-bio">Researching semantic matching of multilingual job titles and enhancing vocational guidance with machine learning models.</p>
         </div>
     </div>
     
@@ -191,13 +196,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/andrea_menco.jpg" alt="Andrea Menco Tovar" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Andrea+Menco+Tovar&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Andrea Menco Tovar</h3>
             <p class="person-title">Graduate Researcher</p>
-            <p class="person-bio">Specializing in Vision Transformers, multispecies identification in vegetation images, and automated detection of food hazards using NLP pipelines.</p>
+            <p class="person-bio">Specializing in Vision Transformers, multispecies identification in vegetation images, and automated detection of food hazards using NLP.</p>
         </div>
     </div>
     
@@ -205,13 +211,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/andersson.png" alt="Anderson Morillo" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Anderson+Morillo&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Anderson Morillo</h3>
             <p class="person-title">Graduate Researcher</p>
-            <p class="person-bio">Developing multilayer AI models for semantic relationship detection and working on financial targeted sentiment analysis using phonestheme semantic approaches.</p>
+            <p class="person-bio">Developing multilayer AI models for semantic relationship detection and working on financial targeted sentiment analysis.</p>
         </div>
     </div>
     
@@ -219,13 +226,14 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/jeison_jimenez.jpg" alt="Jeison D. Jimenez" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Jeison+D.+Jimenez&background=0d6efd&color=fff&size=200'">
                 </div>
                 
             </div>
             <h3 class="person-name">Jeison D. Jimenez</h3>
             <p class="person-title">Graduate Researcher</p>
-            <p class="person-bio">Focusing on Multi-Model LLM approaches for complex tasks like onomastic wordplay translation and human-AI collaborative text classification methodologies.</p>
+            <p class="person-bio">Focusing on Multi-Model LLM approaches for complex tasks like onomastic wordplay translation and human-AI collaborative text classification.</p>
         </div>
     </div>
     
@@ -233,6 +241,7 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://verbanexai.github.io/assets/img/sin_foto.jpg" alt="Daniel Peña Gnecco" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Daniel+Peña+Gnecco&background=0d6efd&color=fff&size=200'">
                 </div>
                 
@@ -244,8 +253,6 @@
     </div>
     
     </div>
-
-    <!-- Research Assistants -->
     <div class="d-flex align-items-center gap-3 mb-5 mt-5" data-aos="fade-right">
         <h2 class="h2 fw-bold mb-0 text-gradient">Research Assistants & Staff</h2>
         <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
@@ -256,18 +263,18 @@
         <div class="card h-100 pub-card person-card">
             <div class="d-flex justify-content-center position-relative w-100 mb-3">
                 <div class="person-img-container mb-0">
+                    <!-- IMAGE WITH FALLBACK IF LINK BREAKS -->
                     <img src="https://nalef-initiative.github.io/static/Andres_Quinones.jpeg" alt="Andres Quinones" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Andres+Quinones&background=0d6efd&color=fff&size=200'">
                 </div>
                 <span class="badge-institution">UTB</span>
             </div>
             <h3 class="person-name">Andres Quinones</h3>
             <p class="person-title">Research Assistant & Web Master</p>
-            <p class="person-bio">Systems engineer at the mayor's office of Cartagena, with experience in web development, database management, and system administration. Master student in engineering with a focus on systems and computing engineering (AI, NLP) at UTB.</p>
+            <p class="person-bio">Systems engineer at the mayor's office of Cartagena, with experience in web development, database management, and system administration. Master student in engineering (AI, NLP).</p>
         </div>
     </div>
     
     </div>
-
 </section>
 
 
