@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People | VerbaNexAI Lab</title>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root[data-bs-theme="dark"] {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.8);
+            --card-bg: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --btn-custom-bg: rgba(255, 255, 255, 0.05);
+            --btn-custom-border: rgba(255, 255, 255, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #a1a1aa;
+        }
+
+        :root[data-bs-theme="light"] {
+            --bg-color: #f8f9fa;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-custom-bg: rgba(0, 0, 0, 0.05);
+            --btn-custom-border: rgba(0, 0, 0, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #52525b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
+        }
+
+        body.page-loaded { opacity: 1; }
+        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
+
+        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; transition: opacity 0.5s ease; }
+
+        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .nav-link { position: relative; font-weight: 500; cursor: pointer; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: #0d6efd; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 80%; }
+
+        #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+
+        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; }
+        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; }
+        .pub-card { position: relative; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+        .pub-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%); transition: transform 0.8s ease; }
+        .pub-card:hover::before { transform: translateX(100%); }
+        .pub-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12); border-color: rgba(13, 110, 253, 0.5); }
+
+        .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Person Card Styles */
+        .person-card { text-align: center; padding: 2.5rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+        .person-img-container { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; border: 4px solid var(--border-color); position: relative; transition: border-color 0.3s ease; }
+        .person-img { width: 100%; height: 100%; object-fit: cover; }
+        .person-card:hover .person-img-container { border-color: #0d6efd; box-shadow: 0 0 20px rgba(13, 110, 253, 0.3); }
+        .person-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-title { color: #0d6efd; font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .person-bio { font-size: 0.9rem; color: var(--text-muted-custom); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+        .badge-institution { position: absolute; bottom: 0; background: var(--bg-color); border: 2px solid var(--border-color); color: var(--bs-body-color); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; transform: translateY(50%); z-index: 2; transition: all 0.3s ease;}
+        .person-card:hover .badge-institution { border-color: #0d6efd; color: #0d6efd; }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient internal-link" href="/">VerbaNexAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link internal-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/blog/" style="color: #0d6efd;">Blog</a></li>
+                    <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+<header class="hero-section pt-5 pb-3" style="min-height: 35vh;">
+    <div class="container text-center pt-5 mt-4" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">Our <span class="text-gradient">Team</span></h1>
+        <p class="lead abstract-text mb-2">Meet the researchers driving innovation at VerbaNexAI Lab.</p>
+    </div>
+</header>
+
+<section class="container py-5 mb-5">
+
+    <!-- Principal Investigators -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-2" data-aos="fade-right">
+        <h2 class="h2 fw-bold mb-0 text-gradient">Principal Investigators</h2>
+        <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
+    </div>
+    <div class="row g-4 mb-5">
+        
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/edwin_puertas.png" alt="Dr. Edwin Puertas" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Edwin+Puertas&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Dr. Edwin Puertas</h3>
+            <p class="person-title">Principal Investigator</p>
+            <p class="person-bio">Director of the Ph.D. and Master’s Programs in Engineering at Universidad Tecnológica de Bolívar and is an active member of the Artificial Intelligence Standards Committee. His work focuses on bridging the gap between academic research and practical industry applications, leading innovative projects in the field of Artificial Intelligence (AI).</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/juan_carlos_martinez_santos.jpg" alt="Dr. Juan Carlos Martinez" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Juan+Carlos+Martinez&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Dr. Juan Carlos Martinez</h3>
+            <p class="person-title">Principal Investigator</p>
+            <p class="person-bio">Senior Researcher at VerbaNexAI Lab. Dr. Martinez has extensive experience directing research focused on predictive analytics, machine learning modeling, and applying NLP algorithms to solve complex data interpretation problems across multiple domains.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/jairo_serrano.png" alt="Dr. Jairo Serrano Castañeda" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Dr.+Jairo+Serrano+Castañeda&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Dr. Jairo Serrano Castañeda</h3>
+            <p class="person-title">Principal Investigator</p>
+            <p class="person-bio">Key faculty member leading the development of advanced neural network architectures and pushing boundaries in computational linguistics. He guides multiple lab initiatives and mentoring students towards contributing to high-level academic conferences.</p>
+        </div>
+    </div>
+    
+    </div>
+
+    <!-- Graduate Researchers -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-5" data-aos="fade-right">
+        <h2 class="h2 fw-bold mb-0 text-gradient">Graduate Researchers</h2>
+        <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
+    </div>
+    <div class="row g-4 mb-5 justify-content-center">
+        
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/melissa_moreno.jpg" alt="Melissa Moreno" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Melissa+Moreno&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Melissa Moreno</h3>
+            <p class="person-title">Graduate Researcher</p>
+            <p class="person-bio">Researching semantic matching of multilingual job titles and enhancing vocational guidance with machine learning models. Regular participant in SemEval and CLEF competitions.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/andrea_menco.jpg" alt="Andrea Menco Tovar" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Andrea+Menco+Tovar&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Andrea Menco Tovar</h3>
+            <p class="person-title">Graduate Researcher</p>
+            <p class="person-bio">Specializing in Vision Transformers, multispecies identification in vegetation images, and automated detection of food hazards using NLP pipelines.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/andersson.png" alt="Anderson Morillo" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Anderson+Morillo&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Anderson Morillo</h3>
+            <p class="person-title">Graduate Researcher</p>
+            <p class="person-bio">Developing multilayer AI models for semantic relationship detection and working on financial targeted sentiment analysis using phonestheme semantic approaches.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/jeison_jimenez.jpg" alt="Jeison D. Jimenez" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Jeison+D.+Jimenez&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Jeison D. Jimenez</h3>
+            <p class="person-title">Graduate Researcher</p>
+            <p class="person-bio">Focusing on Multi-Model LLM approaches for complex tasks like onomastic wordplay translation and human-AI collaborative text classification methodologies.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://verbanexai.github.io/assets/img/sin_foto.jpg" alt="Daniel Peña Gnecco" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Daniel+Peña+Gnecco&background=0d6efd&color=fff&size=200'">
+                </div>
+                
+            </div>
+            <h3 class="person-name">Daniel Peña Gnecco</h3>
+            <p class="person-title">Graduate Researcher</p>
+            <p class="person-bio">Working on Hybrid Re-ranking for Biomedical Entity Linking using SapBERT Embeddings and enhancing entity-aware machine translation frameworks.</p>
+        </div>
+    </div>
+    
+    </div>
+
+    <!-- Research Assistants -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-5" data-aos="fade-right">
+        <h2 class="h2 fw-bold mb-0 text-gradient">Research Assistants & Staff</h2>
+        <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
+    </div>
+    <div class="row g-4 mb-5 justify-content-center">
+        
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 pub-card person-card">
+            <div class="d-flex justify-content-center position-relative w-100 mb-3">
+                <div class="person-img-container mb-0">
+                    <img src="https://nalef-initiative.github.io/static/Andres_Quinones.jpeg" alt="Andres Quinones" class="person-img" onerror="this.src='https://ui-avatars.com/api/?name=Andres+Quinones&background=0d6efd&color=fff&size=200'">
+                </div>
+                <span class="badge-institution">UTB</span>
+            </div>
+            <h3 class="person-name">Andres Quinones</h3>
+            <p class="person-title">Research Assistant & Web Master</p>
+            <p class="person-bio">Systems engineer at the mayor's office of Cartagena, with experience in web development, database management, and system administration. Master student in engineering with a focus on systems and computing engineering (AI, NLP) at UTB.</p>
+        </div>
+    </div>
+    
+    </div>
+
+</section>
+
+
+    <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
+            <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
+        document.querySelectorAll('.internal-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
+            });
+        });
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
+        updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme); localStorage.setItem('theme', newTheme); updateThemeIcon(newTheme);
+        });
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#0d6efd" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } } },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

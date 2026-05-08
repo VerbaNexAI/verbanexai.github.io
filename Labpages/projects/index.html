@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | VerbaNexAI Lab</title>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root[data-bs-theme="dark"] {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.8);
+            --card-bg: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --btn-custom-bg: rgba(255, 255, 255, 0.05);
+            --btn-custom-border: rgba(255, 255, 255, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #a1a1aa;
+        }
+
+        :root[data-bs-theme="light"] {
+            --bg-color: #f8f9fa;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-custom-bg: rgba(0, 0, 0, 0.05);
+            --btn-custom-border: rgba(0, 0, 0, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #52525b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
+        }
+
+        body.page-loaded { opacity: 1; }
+        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
+
+        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; transition: opacity 0.5s ease; }
+
+        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .nav-link { position: relative; font-weight: 500; cursor: pointer; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: #0d6efd; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 80%; }
+
+        #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+
+        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; }
+        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; }
+        .card:hover { transform: translateY(-5px); border-color: rgba(13, 110, 253, 0.5); box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1); }
+        .pub-card { position: relative; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+        .pub-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%); transition: transform 0.8s ease; }
+        .pub-card:hover::before { transform: translateX(100%); }
+        .pub-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12); }
+
+        .btn-custom { background: var(--btn-custom-bg); color: var(--bs-body-color); border: 1px solid var(--btn-custom-border); border-radius: 50px; transition: all 0.3s ease; }
+        .btn-custom:hover, .btn-custom.active { background: var(--btn-custom-hover); border-color: var(--btn-custom-hover); color: #fff; }
+
+        .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient internal-link" href="/">VerbaNexAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link internal-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
+                    <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+<header class="hero-section pt-5 pb-3" style="min-height: 35vh;">
+    <div class="container text-center pt-5 mt-4" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">Projects</h1>
+        <p class="lead abstract-text mb-2">Explore the ongoing technical and research initiatives at our lab.</p>
+    </div>
+</header>
+
+<section class="container py-5 mb-5">
+
+    <!-- Master's Degree Section -->
+    <div class="d-flex align-items-center gap-3 mb-5 mt-4" data-aos="fade-right" id="Master's degree">
+        <h2 class="h2 fw-bold mb-0 text-gradient">Master's degree</h2>
+        <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Master's Project 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary rounded-pill mb-3 align-self-start px-3 py-2">Master's Thesis</span>
+                    <h3 class="card-title h4 fw-bold mb-3">PETER</h3>
+                    <p class="card-text abstract-text flex-grow-1">Phonesthemes Encoder from Transformer Embedding Representation.</p>
+                    <a href="/projects/1_project/" class="btn btn-custom w-100 mt-4 internal-link">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Master's Project 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary rounded-pill mb-3 align-self-start px-3 py-2">Master's Thesis</span>
+                    <h3 class="card-title h4 fw-bold mb-3">Early Detection of Depression and Anxiety</h3>
+                    <p class="card-text abstract-text flex-grow-1">Multimodal System for Early Detection of Depression and Anxiety in University Population.</p>
+                    <a href="/projects/2_project/" class="btn btn-custom w-100 mt-4 internal-link">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Master's Project 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-primary bg-opacity-25 text-primary border border-primary rounded-pill mb-3 align-self-start px-3 py-2">Master's Thesis</span>
+                    <h3 class="card-title h4 fw-bold mb-3">NER-Enhanced Machine Translation for Gastronomic Texts</h3>
+                    <p class="card-text abstract-text flex-grow-1">Entity-aware NER-NMT system for culturally accurate Spanish-English translation of gastronomic texts.</p>
+                    <a href="/projects/3_project/" class="btn btn-custom w-100 mt-4 internal-link">View Project &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lab Initiatives Section (Previous Projects) -->
+    <div class="d-flex align-items-center gap-3 mt-5 pt-4 mb-5" data-aos="fade-right">
+        <h2 class="h2 fw-bold mb-0 text-gradient">Lab Initiatives</h2>
+        <div class="flex-grow-1" style="height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent);"></div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Previous Project 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary rounded-pill mb-3 align-self-start px-3 py-2">Lab Initiative</span>
+                    <h3 class="card-title h4 fw-bold mb-3">Smartlink Analytics</h3>
+                    <p class="card-text abstract-text flex-grow-1">An intelligent platform for consistency validation and integration of technical engineering data.</p>
+                    <a href="https://github.com/VerbaNexAI/SmartlinkAnalytics" target="_blank" class="btn btn-custom w-100 mt-4">View on GitHub &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous Project 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary rounded-pill mb-3 align-self-start px-3 py-2">Lab Initiative</span>
+                    <h3 class="card-title h4 fw-bold mb-3">Tourist Profiles in Sucre</h3>
+                    <p class="card-text abstract-text flex-grow-1">Using text analysis to identify and categorize tourist profiles in the Sucre region based on unstructured data.</p>
+                    <a href="https://github.com/VerbaNexAI/TouristProfilesSucre" target="_blank" class="btn btn-custom w-100 mt-4">View on GitHub &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous Project 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 p-4 pub-card">
+                <div class="card-body d-flex flex-column p-0">
+                    <span class="badge bg-secondary bg-opacity-25 text-secondary border border-secondary rounded-pill mb-3 align-self-start px-3 py-2">Lab Initiative</span>
+                    <h3 class="card-title h4 fw-bold mb-3">CLEF 2025</h3>
+                    <p class="card-text abstract-text flex-grow-1">Our participation framework and codebase for the Cross-Language Evaluation Forum tasks.</p>
+                    <a href="https://github.com/VerbaNexAI/CLEF2025" target="_blank" class="btn btn-custom w-100 mt-4">View on GitHub &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+    <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
+            <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
+        document.querySelectorAll('.internal-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
+            });
+        });
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
+        updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme); localStorage.setItem('theme', newTheme); updateThemeIcon(newTheme);
+        });
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#0d6efd" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } } },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

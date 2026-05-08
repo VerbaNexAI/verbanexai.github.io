@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | VerbaNexAI Lab</title>
+
+    <!-- Script para evitar el parpadeo del tema (FOUC) al cargar -->
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for Light / Dark Mode */
+        :root[data-bs-theme="dark"] {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.8);
+            --card-bg: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --btn-custom-bg: rgba(255, 255, 255, 0.05);
+            --btn-custom-border: rgba(255, 255, 255, 0.1);
+            --btn-custom-hover: #0d6efd;
+        }
+
+        :root[data-bs-theme="light"] {
+            --bg-color: #f8f9fa;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-custom-bg: rgba(0, 0, 0, 0.05);
+            --btn-custom-border: rgba(0, 0, 0, 0.1);
+            --btn-custom-hover: #0d6efd;
+        }
+
+        /* Page Transition Styles (Fluid Navigation) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            opacity: 0; /* Starts hidden for transition */
+            transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
+        }
+
+        body.page-loaded {
+            opacity: 1; /* Fades in when loaded */
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Interactive Background Container */
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar {
+            background: var(--nav-bg) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            color: inherit;
+            padding: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        #theme-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(13, 110, 253, 0.08) 0%, transparent 60%);
+            margin-top: 56px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #0d6efd, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Custom Cards with Glassmorphism */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(13, 110, 253, 0.5);
+            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.15);
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .btn-custom {
+            background: var(--btn-custom-bg);
+            color: var(--bs-body-color);
+            border: 1px solid var(--btn-custom-border);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--btn-custom-hover);
+            border-color: var(--btn-custom-hover);
+            color: #fff;
+        }
+
+        .list-group-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            transition: transform 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            transform: translateX(10px);
+            border-left: 4px solid #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient internal-link" href="/">VerbaNexAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link internal-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
+                    <!-- Theme Toggle -->
+                    <li class="nav-item ms-lg-3">
+                        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+        <header class="py-5 mt-5">
+            <div class="container text-center" data-aos="fade-in">
+                <h1 class="display-4 fw-bold">Teaching & Academics</h1>
+                <p class="lead text-secondary">Fostering the next generation of AI researchers at UTB.</p>
+            </div>
+        </header>
+
+        <section class="container pb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8" data-aos="fade-up">
+                    <div class="card p-4">
+                        <div class="card-body text-center">
+                            <h3 class="card-title mb-4">Seminars and Courses</h3>
+                            <p class="card-text text-secondary">Information regarding undergraduate and graduate courses supported by the VerbaNexAI Lab. Details on current semesters will be updated here as academic terms progress.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
+            <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        // 1. Initialize Page Transition (Fluid Navigation)
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('page-loaded');
+        });
+
+        document.querySelectorAll('.internal-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // Only animate for internal routing
+                if (href && href.startsWith('/')) {
+                    e.preventDefault();
+                    document.body.classList.remove('page-loaded');
+                    // Wait for CSS transition to finish before navigating
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400); 
+                }
+            });
+        });
+
+        // 2. Initialize AOS Animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // 3. Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle');
+
+        function updateThemeIcon(theme) {
+            themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // Set initial icon based on script executed in <head>
+        updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        // 4. Initialize Particle.js Network effect
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#0d6efd" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0d6efd",
+                    "opacity": 0.3,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.5,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } },
+                    "push": { "particles_nb": 3 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

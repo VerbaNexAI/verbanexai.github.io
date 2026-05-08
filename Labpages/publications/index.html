@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | VerbaNexAI Lab</title>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root[data-bs-theme="dark"] {
+            --bg-color: #050505;
+            --nav-bg: rgba(5, 5, 5, 0.8);
+            --card-bg: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --btn-custom-bg: rgba(255, 255, 255, 0.05);
+            --btn-custom-border: rgba(255, 255, 255, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #a1a1aa;
+        }
+
+        :root[data-bs-theme="light"] {
+            --bg-color: #f8f9fa;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-custom-bg: rgba(0, 0, 0, 0.05);
+            --btn-custom-border: rgba(0, 0, 0, 0.1);
+            --btn-custom-hover: #0d6efd;
+            --text-muted-custom: #52525b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
+        }
+
+        body.page-loaded { opacity: 1; }
+        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
+
+        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; transition: opacity 0.5s ease; }
+
+        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .nav-link { position: relative; font-weight: 500; cursor: pointer; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: #0d6efd; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 80%; }
+
+        #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+
+        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; }
+        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; }
+        .card:hover { transform: translateY(-5px); border-color: rgba(13, 110, 253, 0.5); box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1); }
+
+        .btn-custom { background: var(--btn-custom-bg); color: var(--bs-body-color); border: 1px solid var(--btn-custom-border); border-radius: 50px; transition: all 0.3s ease; }
+        .btn-custom:hover, .btn-custom.active { background: var(--btn-custom-hover); border-color: var(--btn-custom-hover); color: #fff; }
+
+        .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient internal-link" href="/">VerbaNexAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link internal-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
+                    <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+<style>
+    .year-badge {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700;
+        background: linear-gradient(90deg, #0d6efd, #8b5cf6); color: white;
+        box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+    }
+    .year-line { height: 2px; background: linear-gradient(90deg, rgba(13,110,253,0.5), transparent); flex-grow: 1; }
+    #pubSearch { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--bs-body-color); border-radius: 50px; padding-left: 1.5rem; }
+    #pubSearch:focus { background: var(--bg-color); box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); border-color: #0d6efd; color: var(--bs-body-color); }
+    #pubSearch::placeholder { color: var(--text-muted-custom); }
+    .pub-card.hidden, .year-block.hidden { display: none !important; }
+</style>
+
+<header class="hero-section pt-5 pb-3" style="min-height: 35vh;">
+    <div class="container text-center pt-5 mt-4" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">Publications</h1>
+    </div>
+</header>
+
+<section class="container py-4">
+    <!-- Filters -->
+    <div class="row mb-5 g-3 align-items-center" data-aos="fade-up">
+        <div class="col-lg-4">
+            <input id="pubSearch" type="text" class="form-control form-control-lg" placeholder="Search title, author, venue...">
+        </div>
+        <div class="col-lg-8 d-flex flex-wrap gap-2 justify-content-lg-end">
+            <button class="btn btn-sm btn-custom active filter-btn" data-filter-year="all">All Years</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-year="2025">2025</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-year="2024">2024</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-year="2023">2023</button>
+            <div class="vr mx-2 bg-secondary"></div>
+            <button class="btn btn-sm btn-custom active filter-btn" data-filter-category="all">All Cats</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-category="CLEF">CLEF</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-category="SemEval">SemEval</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-category="CCIS">CCIS</button>
+            <button class="btn btn-sm btn-custom filter-btn" data-filter-category="IEEE">IEEE</button>
+        </div>
+    </div>
+
+    <!-- Timeline List -->
+    <div class="row">
+        <div class="col-12">
+            <!-- 2025 -->
+            <div class="year-block mb-5" data-year="2025">
+                <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-right">
+                    <span class="year-badge">2025</span><div class="year-line"></div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="LNCS">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">LNCS</span>
+                        <h4 class="card-title fw-bold mb-2">Mapping Motion: A Cognitive Approach to Dyspraxia Multimodal Analysis</h4>
+                        <p class="mb-1 text-primary fw-medium">In Advances in Artificial Intelligence – IBERAMIA 2024, 2025</p>
+                        <p class="abstract-text mb-0 mt-3">This research paper presents a novel software tool designed to revolutionize speech therapy for individuals with Childhood Apraxia of Speech (CAS)...</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="CLEF">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">CLEF</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI at CLEF 2025 JOKER Task 3: Multi-Model LLM Approach for Onomastic Wordplay Translation</h4>
+                        <p class="mb-1 text-primary fw-medium">Maria Paz Ramirez, Jeison D. Jimenez, Deyson Gómez Sánchez, and 2 more authors</p>
+                        <p class="abstract-text fw-semibold">In CEUR Workshop Proceedings, 2025</p>
+                        <p class="abstract-text mb-0">Our approach achieved first place in the CLEF 2025 JOKER Task 3 competition, outperforming all other participating teams...</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="CLEF">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">CLEF</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI at CheckThat! 2025: Fine-Tuning DeBERTa for Multi-Label Scientific Discourse Detection in Tweets</h4>
+                        <p class="mb-1 text-primary fw-medium">Mervin Jesus Sosa Borrero, Jairo E. Serrano, and Juan Carlos Martinez-Santos</p>
+                        <p class="abstract-text fw-semibold">In CEUR Workshop Proceedings, 2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="CLEF">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">CLEF</span>
+                        <h4 class="card-title fw-bold mb-2">COTECMAR-UTB at eRisk 2025: Semantic-Centroid Symptom Ranking and Early Depression Detection using Adaptive Decision Rule</h4>
+                        <p class="mb-1 text-primary fw-medium">Luis Mendoza, Joan Suarez, Juan Carlos Martinez-Santos, and 1 more author</p>
+                        <p class="abstract-text fw-semibold">In CEUR Workshop Proceedings, 2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="CLEF">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">CLEF</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNex at TalentCLEF2025: Semantic Matching of Multilingual Job Titles through a Framework Integrating ESCO Taxonomy</h4>
+                        <p class="mb-1 text-primary fw-medium">Melissa Moreno Novoa, Juan Carlos Martinez-Santos, and Jairo E. Serrano</p>
+                        <p class="abstract-text fw-semibold">In CEUR Workshop Proceedings, 2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="SemEval">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">SemEval</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI at SemEval-2025 Task 11 Track A: A RoBERTa-Based Approach for the Classification of Emotions in Text</h4>
+                        <p class="mb-1 text-primary fw-medium">Danileth Almanza, Juan Martínez Santos, and Edwin Puertas</p>
+                        <p class="abstract-text fw-semibold">In Proceedings of SemEval-2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="SemEval">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">SemEval</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI at SemEval-2025 Task 9: Advances and Challenges in the Automatic Detection of Food Hazards</h4>
+                        <p class="mb-1 text-primary fw-medium">Andrea Menco Tovar, Juan Martinez Santos, and Edwin Puertas</p>
+                        <p class="abstract-text fw-semibold">In Proceedings of SemEval-2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2025" data-category="Systems">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">Systems Soft Comput.</span>
+                        <h4 class="card-title fw-bold mb-2">Enhancing consistency in piping and instrumentation diagrams using DistilBERT and smart PID systems</h4>
+                        <p class="mb-1 text-primary fw-medium">F.S. Gómez-Vega, O. Acuña, Andrea C. Camargo, and 6 more authors</p>
+                        <p class="abstract-text fw-semibold">Systems and Soft Computing, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="year-block mb-5" data-year="2024">
+                <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-right">
+                    <span class="year-badge">2024</span><div class="year-line"></div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2024" data-category="ClinicalNLP">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">ClinicalNLP</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI at MEDIQA-CORR: Efficacy of GRU with BioWordVec and ClinicalBERT in Error Correction in Clinical Notes</h4>
+                        <p class="mb-1 text-primary fw-medium">Juan Pajaro, Edwin Puertas, David Villate, and 2 more authors</p>
+                        <p class="abstract-text fw-semibold">Proc. of ClinicalNLP, 2024</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2024" data-category="IEEE">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">IEEE ANDESCON</span>
+                        <h4 class="card-title fw-bold mb-2">Feature Selection for Forecasting of Energy Spot Price in the Colombian Market</h4>
+                        <p class="mb-1 text-primary fw-medium">Mauro A. Gonzalez-Sierra, Rafael Arnedo, Edwin Puertas, and 1 more author</p>
+                        <p class="abstract-text fw-semibold">In IEEE ANDESCON, 2024</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2024" data-category="CCIS">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">CCIS</span>
+                        <h4 class="card-title fw-bold mb-2">Unveiling Tourist Profiles in the Department of Sucre: A Text Analysis Approach</h4>
+                        <p class="mb-1 text-primary fw-medium">Danileth Almanza-Gonzalez, Edwin Puertas, and Juan Carlos Martinez-Santos</p>
+                        <p class="abstract-text fw-semibold">In Advances in Computing, 2024</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2024" data-category="SemEval">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">SemEval</span>
+                        <h4 class="card-title fw-bold mb-2">VerbaNexAI Lab at SemEval-2024 Task 1: A Multilayer Artificial Intelligence Model for Semantic Relationship Detection</h4>
+                        <p class="mb-1 text-primary fw-medium">Anderson Morillo, Daniel Peña, Juan Carlos Martinez Santos, and 1 more author</p>
+                        <p class="abstract-text fw-semibold">Proc. of SemEval, 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2023 -->
+            <div class="year-block mb-5" data-year="2023">
+                <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-right">
+                    <span class="year-badge">2023</span><div class="year-line"></div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2023" data-category="SemEval">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">SemEval</span>
+                        <h4 class="card-title fw-bold mb-2">UTB-NLP at SemEval-2023 Task 3: Weirdness, Lexical Features for Detecting Categorical Framings, and Persuasion in Online News</h4>
+                        <p class="mb-1 text-primary fw-medium">Juan Cuadrado, Elizabeth Martinez, Anderson Morillo, and 4 more authors</p>
+                        <p class="abstract-text fw-semibold">Proc. of SemEval, 2023</p>
+                        <p class="abstract-text mb-0 mt-3">Nowadays, persuasive messages are more and more frequent in social networks, which generates great concern... This paper presents a novel strategy for news based on Lexical Weirdness.</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2023" data-category="ResearchGate">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">ResearchGate</span>
+                        <h4 class="card-title fw-bold mb-2">Automated Depression Detection in Text Data: Leveraging Lexical Features, Phonesthemes Embedding, and RoBERTa Transformer Model</h4>
+                        <p class="mb-1 text-primary fw-medium">Edwin Puertas and Juan Carlos Martinez-Santos</p>
+                        <p class="abstract-text fw-semibold">2023</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2023" data-category="IEEE">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">IEEE Latin Am. Trans.</span>
+                        <h4 class="card-title fw-bold mb-2">Long-Term Effects of Degradation on Photovoltaic System Return on Investment</h4>
+                        <p class="mb-1 text-primary fw-medium">Juan Cuadrado, Elizabeth Martinez, Edwin Puertas, and 1 more author</p>
+                        <p class="abstract-text fw-semibold">IEEE Latin America Transactions, 2023</p>
+                    </div>
+                </div>
+
+                <div class="pub-card card p-4 p-lg-5 mb-4" data-year="2023" data-category="IEEE">
+                    <div class="card-body p-0">
+                        <span class="badge bg-secondary mb-3">IEEE C3</span>
+                        <h4 class="card-title fw-bold mb-2">RealCheck: A Web Application for Fake News Detection Using Natural Language Processing</h4>
+                        <p class="mb-1 text-primary fw-medium">Edwin Puertas, Jenifer Vasquez, and Juan Carlos Martinez-Santos</p>
+                        <p class="abstract-text fw-semibold">In 1st IEEE Colombian Caribbean Conference (C3), 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="noResults" class="text-center py-5 d-none">
+        <h3 class="fw-bold">No publications found</h3>
+        <p class="text-secondary">Try another keyword, year, or category.</p>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const searchInput = document.getElementById("pubSearch");
+        const pubCards = [...document.querySelectorAll(".pub-card")];
+        const yearBlocks = [...document.querySelectorAll(".year-block")];
+        const noResults = document.getElementById("noResults");
+        const yearButtons = [...document.querySelectorAll("[data-filter-year]")];
+        const categoryButtons = [...document.querySelectorAll("[data-filter-category]")];
+
+        let activeYear = "all"; let activeCategory = "all";
+
+        function filterPublications() {
+            const query = (searchInput?.value || "").toLowerCase().trim();
+            let visibleCount = 0;
+            pubCards.forEach(card => {
+                const year = card.dataset.year; const category = card.dataset.category;
+                const haystack = (card.innerText).toLowerCase();
+                const yearMatch = activeYear === "all" || year === activeYear;
+                const categoryMatch = activeCategory === "all" || category === activeCategory;
+                const textMatch = !query || haystack.includes(query);
+                const visible = yearMatch && categoryMatch && textMatch;
+                card.classList.toggle("hidden", !visible);
+                if (visible) visibleCount++;
+            });
+            yearBlocks.forEach(block => {
+                const visibleCards = block.querySelectorAll(".pub-card:not(.hidden)");
+                block.classList.toggle("hidden", visibleCards.length === 0);
+            });
+            noResults.classList.toggle("d-none", visibleCount > 0);
+        }
+
+        function setActiveButton(buttons, activeAttr, value) {
+            buttons.forEach(btn => btn.classList.toggle("active", btn.getAttribute(activeAttr) === value));
+        }
+
+        yearButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                activeYear = btn.dataset.filterYear; setActiveButton(yearButtons, "data-filter-year", activeYear); filterPublications();
+            });
+        });
+
+        categoryButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                activeCategory = btn.dataset.filterCategory; setActiveButton(categoryButtons, "data-filter-category", activeCategory); filterPublications();
+            });
+        });
+
+        searchInput?.addEventListener("input", filterPublications);
+    })();
+</script>
+
+
+    <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
+            <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
+        document.querySelectorAll('.internal-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
+            });
+        });
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
+        updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme); localStorage.setItem('theme', newTheme); updateThemeIcon(newTheme);
+        });
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#0d6efd" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } } },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
