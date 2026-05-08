@@ -3,74 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | VerbaNexAI Lab</title>
-
+    
     <script>
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-bs-theme', savedTheme);
     </script>
 
+    <title>Home | VerbaNexAI Lab</title>
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
+        
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Interactive Background Container */
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Glassmorphism Navbar */
+        .navbar {
+            background: rgba(5, 5, 5, 0.8) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(13, 110, 253, 0.1) 0%, transparent 60%);
+            margin-top: 56px; /* Offset for navbar */
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #0d6efd, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Custom Cards with Glassmorphism */
+        .card {
+            background: rgba(25, 25, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(13, 110, 253, 0.5);
+            box-shadow: 0 15px 35px rgba(13, 110, 253, 0.15);
+        }
+
+        .card-title {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .btn-custom {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: #0d6efd;
+            border-color: #0d6efd;
+            color: #fff;
+        }
+
+        .list-group-item {
+            background: rgba(25, 25, 25, 0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            transition: transform 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            transform: translateX(10px);
+            border-left: 4px solid #0d6efd;
+        }
+    
+        /* THEME VARIABLES */
         :root[data-bs-theme="dark"] {
             --bg-color: #050505;
+            --text-color: #e0e0e0;
             --nav-bg: rgba(5, 5, 5, 0.8);
             --card-bg: rgba(25, 25, 25, 0.6);
             --border-color: rgba(255, 255, 255, 0.05);
             --btn-custom-bg: rgba(255, 255, 255, 0.05);
-            --btn-custom-border: rgba(255, 255, 255, 0.1);
-            --btn-custom-hover: #0d6efd;
-            --text-muted-custom: #a1a1aa;
+            --list-item-bg: rgba(25, 25, 25, 0.6);
         }
 
         :root[data-bs-theme="light"] {
             --bg-color: #f8f9fa;
+            --text-color: #212529;
             --nav-bg: rgba(255, 255, 255, 0.8);
-            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.8);
             --border-color: rgba(0, 0, 0, 0.1);
             --btn-custom-bg: rgba(0, 0, 0, 0.05);
-            --btn-custom-border: rgba(0, 0, 0, 0.1);
-            --btn-custom-hover: #0d6efd;
-            --text-muted-custom: #52525b;
+            --list-item-bg: rgba(255, 255, 255, 0.8);
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
+            color: var(--text-color);
             overflow-x: hidden;
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out, background-color 0.4s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        body.page-loaded { opacity: 1; }
-        h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Space Grotesk', sans-serif; }
-
-        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1; transition: opacity 0.5s ease; }
-
-        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); transition: all 0.3s ease; }
-        .nav-link { position: relative; font-weight: 500; cursor: pointer; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: #0d6efd; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 80%; }
+        /* Override hardcoded colors with variables */
+        .navbar { background: var(--nav-bg) !important; border-bottom-color: var(--border-color); }
+        .card { background: var(--card-bg); border-color: var(--border-color); }
+        .card-title { color: var(--text-color); }
+        .list-group-item { background: var(--list-item-bg); border-color: var(--border-color); color: var(--text-color); }
+        .btn-custom { background: var(--btn-custom-bg); color: var(--text-color); border-color: var(--border-color); }
+        .btn-custom:hover { background: #0d6efd; border-color: #0d6efd; color: #fff; }
 
         #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
         #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
-
-        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; min-height: 80vh; }
-        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
-
-        .abstract-text { color: var(--text-muted-custom); font-size: 1.1rem; line-height: 1.8; }
-    </style>
+</style>
 </head>
 <body>
+    <!-- Particle Background -->
     <div id="particles-js"></div>
 
+    <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3 text-gradient" href="/">VerbaNexAI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -88,57 +194,133 @@
         </div>
     </nav>
 
-    <!-- CONTENT -->
-    <header class="hero-section">
-        <div class="container text-center pt-5 mt-4" data-aos="fade-up">
-            <h1 class="display-3 fw-bold mb-4">VerbaNexAI <span class="text-gradient">Lab</span></h1>
-            <p class="lead mx-auto abstract-text mb-5" style="max-width: 900px; text-align: justify;">
-                VerbaNexAI Lab is a research group of the Universidad Tecnológica de Bolívar (UTB) in Colombia, dedicated to translating cutting-edge artificial intelligence research into practical solutions for language understanding, image analysis, energy modeling and educational technologies. The Lab brings together expertise in natural language processing, computer vision and predictive analytics to generate actionable insights for automated inspection, efficient energy management and adaptive learning environments, all within an open collaboration and reproducible research framework.
-            </p>
-            <div class="mt-4 p-4 rounded d-inline-block shadow-sm" style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color);">
-                <p class="mb-1 text-primary fw-bold fs-5">School of Digital Transformation</p>
-                <p class="mb-1 abstract-text small">Parque Industrial y Tecnológico Carlos Vélez Pombo Km 1 Vía Turbaco</p>
-                <p class="mb-0 abstract-text small">Cartagena de Indias, Colombia</p>
+    
+        <header class="hero-section">
+            <div class="container text-center" data-aos="fade-up">
+                <h1 class="display-2 fw-bold mb-4">Pioneering <span class="text-gradient">Intelligence.</span></h1>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                    VerbaNexAI is a research collective at the Technological University of Bolivar (UTB) focusing on the frontier of AI, NLP, and intelligent systems.
+                </p>
+                <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
+                    <a href="/projects/" class="btn btn-primary btn-lg px-4 me-3 rounded-pill shadow">View Projects</a>
+                    <a href="/publications/" class="btn btn-outline-light btn-lg px-4 rounded-pill">Publications</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <footer class="py-5 border-top text-center" style="border-color: var(--border-color) !important; background: var(--bg-color);">
+        <section class="container py-5">
+            <h2 class="h1 mb-5 text-center" data-aos="fade-up">Core Research Areas</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <div class="fs-1 text-primary mb-3">⚗️</div>
+                            <h3 class="card-title h4">Natural Language Processing</h3>
+                            <p class="card-text text-muted">Building semantic understanding, sentiment classification, and advanced text analytics for diverse languages and domains.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <div class="fs-1 text-primary mb-3">🧠</div>
+                            <h3 class="card-title h4">Applied AI Models</h3>
+                            <p class="card-text text-muted">Designing predictive models, intelligent architectures, and machine learning solutions to solve real-world complex problems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <div class="fs-1 text-primary mb-3">📊</div>
+                            <h3 class="card-title h4">Data Representation</h3>
+                            <p class="card-text text-muted">Innovating in how knowledge is structured, retrieved, and represented computationally in neural networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top border-secondary text-center">
         <div class="container">
-            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
-            <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
+            <p class="mb-1 text-secondary">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
+            <p class="text-muted small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
-
-        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
-
+        // Initialize Animations on Scroll
+        
+        // Theme Toggle Logic
         const themeBtn = document.getElementById('theme-toggle');
         function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
-        updateThemeIcon(document.documentElement.getAttribute('data-bs-theme'));
+
+        // Initial setup
+        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        updateThemeIcon(currentTheme);
+
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-bs-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-bs-theme', newTheme); localStorage.setItem('theme', newTheme); updateThemeIcon(newTheme);
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
         });
 
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
+        });
+
+        // Initialize Particle.js Network effect
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#0d6efd" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": false },
                 "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#0d6efd", "opacity": 0.3, "width": 1 },
-                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "out_mode": "out" }
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#8b5cf6",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
             },
-            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" } }, "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.6 } } } },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
             "retina_detect": true
         });
     </script>
