@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | VerbaNexAI Lab</title>
+    <title>Home | VerbaNexAI Lab</title>
 
     <script>
         const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -58,21 +58,10 @@
         #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
         #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
 
-        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; }
+        .hero-section { display: flex; align-items: center; background: radial-gradient(circle at top center, rgba(13, 110, 253, 0.08) 0%, transparent 60%); margin-top: 56px; min-height: 80vh; }
         .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
 
-        .card { background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1rem; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; }
-        .pub-card { position: relative; overflow: hidden; transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
-        .pub-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%); transition: transform 0.8s ease; }
-        .pub-card:hover::before { transform: translateX(100%); }
-        .pub-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12); border-color: rgba(13, 110, 253, 0.5); }
-
-        .btn-custom { background: var(--btn-custom-bg); color: var(--bs-body-color); border: 1px solid var(--btn-custom-border); border-radius: 50px; transition: all 0.3s ease; }
-        .btn-custom:hover, .btn-custom.active { background: var(--btn-custom-hover); border-color: var(--btn-custom-hover); color: #fff; }
-
-        .abstract-text { color: var(--text-muted-custom); font-size: 0.95rem; line-height: 1.6; }
-
-        
+        .abstract-text { color: var(--text-muted-custom); font-size: 1.1rem; line-height: 1.8; }
     </style>
 </head>
 <body>
@@ -80,57 +69,41 @@
 
     <nav class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3 text-gradient internal-link" href="/">VerbaNexAI</a>
+            <a class="navbar-brand fw-bold fs-3 text-gradient" href="/">VerbaNexAI</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-2 align-items-center">
-                    <li class="nav-item"><a class="nav-link internal-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/publications/">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/projects/">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/teaching/">Teaching</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/repositories/">Repositories</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/people/">People</a></li>
-                    <li class="nav-item"><a class="nav-link internal-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/people/">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
                     <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    
-<header class="hero-section pt-5 pb-3" style="min-height: 35vh;">
-    <div class="container text-center pt-5 mt-4" data-aos="fade-up">
-        <h1 class="display-4 fw-bold mb-3">Lab <span class="text-gradient">Blog</span></h1>
-        <p class="lead abstract-text mb-2">Insights, tutorials, and thoughts from our research team.</p>
-    </div>
-</header>
-<section class="container py-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8" data-aos="fade-up">
-            <article class="card p-4 p-lg-5 mb-5 pub-card border-primary" style="border-width: 1px;">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill px-3 py-2">Tutorial</span>
-                    <span class="text-secondary small">May 05, 2026</span>
-                </div>
-                <h2 class="h3 fw-bold mb-3">Getting Started with Transformer Fine-Tuning</h2>
-                <div class="d-flex align-items-center mb-4">
-                    <img src="https://verbanexai.github.io/assets/img/edwin_puertas.png" alt="Author" class="rounded-circle me-3" width="40" height="40" style="object-fit:cover;">
-                    <div>
-                        <p class="mb-0 fw-medium">Dr. Edwin Puertas</p>
-                        <p class="mb-0 text-secondary small">Principal Investigator</p>
-                    </div>
-                </div>
-                <p class="abstract-text mb-4">Fine-tuning large language models can seem daunting, but with modern libraries like Hugging Face Transformers, it has become highly accessible...</p>
-                <a href="/blog/getting-started/" class="btn btn-custom align-self-start internal-link">Read Full Post &rarr;</a>
-            </article>
+    <!-- CONTENT -->
+    <header class="hero-section">
+        <div class="container text-center pt-5 mt-4" data-aos="fade-up">
+            <h1 class="display-3 fw-bold mb-4">VerbaNexAI <span class="text-gradient">Lab</span></h1>
+            <p class="lead mx-auto abstract-text mb-5" style="max-width: 900px; text-align: justify;">
+                VerbaNexAI Lab is a research group of the Universidad Tecnológica de Bolívar (UTB) in Colombia, dedicated to translating cutting-edge artificial intelligence research into practical solutions for language understanding, image analysis, energy modeling and educational technologies. The Lab brings together expertise in natural language processing, computer vision and predictive analytics to generate actionable insights for automated inspection, efficient energy management and adaptive learning environments, all within an open collaboration and reproducible research framework.
+            </p>
+            <div class="mt-4 p-4 rounded d-inline-block shadow-sm" style="background: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color);">
+                <p class="mb-1 text-primary fw-bold fs-5">School of Digital Transformation</p>
+                <p class="mb-1 abstract-text small">Parque Industrial y Tecnológico Carlos Vélez Pombo Km 1 Vía Turbaco</p>
+                <p class="mb-0 abstract-text small">Cartagena de Indias, Colombia</p>
+            </div>
         </div>
-    </div>
-</section>
+    </header>
 
-
-    <footer class="py-5 mt-5 border-top text-center" style="border-color: var(--border-color) !important;">
+    <footer class="py-5 border-top text-center" style="border-color: var(--border-color) !important; background: var(--bg-color);">
         <div class="container">
             <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab - Technological University of Bolivar (UTB)</p>
             <p class="text-secondary small">Advancing the frontiers of Artificial Intelligence and Natural Language Processing.</p>
@@ -143,12 +116,7 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
-        document.querySelectorAll('.internal-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href.startsWith('/')) { e.preventDefault(); document.body.classList.remove('page-loaded'); setTimeout(() => { window.location.href = href; }, 400); }
-            });
-        });
+
         AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
 
         const themeBtn = document.getElementById('theme-toggle');
