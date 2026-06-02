@@ -48,6 +48,7 @@
 |--------|------|------|
 | <img src="https://github.com/EdwinPuertas.png" width="48" height="48" style="border-radius:50%"/> | [Edwin Puertas, PhD](https://github.com/EdwinPuertas) | Lab Director · PhD & Master's Programs Director at UTB · AI Standards Committee |
 | <img src="https://github.com/jcmartinezs.png" width="48" height="48" style="border-radius:50%"/> | [Juan Carlos Martinez Santos, PhD](https://github.com/jcmartinezs) | Principal Investigator · Senior Researcher · Predictive Analytics · ML · NLP |
+| <img src="https://github.com/PCesteban.png" width="48" height="48" style="border-radius:50%"/> | [PCesteban](https://github.com/PCesteban) | Principal Investigator · Quantum Computing Expert |
 | <img src="https://github.com/jairoserrano.png" width="48" height="48" style="border-radius:50%"/> | [Jairo Enrique Serrano Castañeda](https://github.com/jairoserrano) | Principal Investigator · Neural Architectures · Computational Linguistics |
 
 ### Graduate Researchers
