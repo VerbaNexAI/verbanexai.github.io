@@ -44,27 +44,36 @@
 
 ### Principal Investigators
 
-| Name | Role |
-|------|------|
-| [Dr. Edwin Puertas](https://github.com/EdwinPuertas) | Lab Director · PhD & Master's Programs Director at UTB · AI Standards Committee |
-| Dr. Juan Carlos Martinez Santos | Senior Researcher · Predictive Analytics · ML · NLP |
-| Dr. Jairo Serrano Castañeda | Researcher · Neural Architectures · Computational Linguistics |
+| Avatar | Name | Role |
+|--------|------|------|
+| <img src="https://github.com/EdwinPuertas.png" width="48" height="48" style="border-radius:50%"/> | [Edwin Puertas, PhD](https://github.com/EdwinPuertas) | Lab Director · PhD & Master's Programs Director at UTB · AI Standards Committee |
+| <img src="https://github.com/jairoserrano.png" width="48" height="48" style="border-radius:50%"/> | [Jairo Enrique Serrano Castañeda](https://github.com/jairoserrano) | Principal Investigator · Neural Architectures · Computational Linguistics |
 
 ### Graduate Researchers
 
-| Name | Research Focus |
-|------|---------------|
-| Melissa Moreno | Semantic matching of multilingual job titles · Vocational guidance via ML |
-| Andrea Menco Tovar | Vision Transformers · Multispecies identification · Food hazard detection (NLP) |
-| Anderson Morillo | Semantic relationship detection · Financial sentiment analysis |
-| Jeison D. Jimenez | Multi-Model LLM · Onomastic wordplay translation · Human-AI text classification |
-| Daniel Peña Gnecco | Biomedical entity linking · Entity-aware machine translation |
+| Avatar | Name | Focus |
+|--------|------|-------|
+| <img src="https://github.com/JeisonJimenezA.png" width="48" height="48" style="border-radius:50%"/> | [Jeison Jimenez](https://github.com/JeisonJimenezA) | Machine Learning · Deep Learning · NLP · Multi-Model LLM |
+| <img src="https://github.com/Novoa0599.png" width="48" height="48" style="border-radius:50%"/> | [Melissa Moreno Novoa](https://github.com/Novoa0599) | Semantic matching of multilingual job titles · Vocational guidance via ML |
+| <img src="https://github.com/Andreacarolinamencotovar1996.png" width="48" height="48" style="border-radius:50%"/> | [Andrea Carolina Menco Tovar](https://github.com/Andreacarolinamencotovar1996) | Vision Transformers · Multispecies identification · Food hazard detection |
+| <img src="https://github.com/andersonmorillo.png" width="48" height="48" style="border-radius:50%"/> | [Anderson Morillo](https://github.com/andersonmorillo) | Semantic relationship detection · Financial sentiment analysis |
+| <img src="https://github.com/Danp06.png" width="48" height="48" style="border-radius:50%"/> | [Daniel Peña](https://github.com/Danp06) | Biomedical entity linking · Entity-aware machine translation |
+| <img src="https://github.com/Danileth.png" width="48" height="48" style="border-radius:50%"/> | [Danileth Almanza](https://github.com/Danileth) | NLP · Sentiment Analysis · Tourist Profiling |
+| <img src="https://github.com/mervinso.png" width="48" height="48" style="border-radius:50%"/> | [Mervin Jesus Sosa Borrero](https://github.com/mervinso) | Scientific discourse detection · NLP |
+| <img src="https://github.com/HIPERDAGA.png" width="48" height="48" style="border-radius:50%"/> | [Diego Guevara](https://github.com/HIPERDAGA) | Control Engineering · Applied AI |
+| <img src="https://github.com/Deygoms.png" width="48" height="48" style="border-radius:50%"/> | [Deygoms](https://github.com/Deygoms) | Researcher |
+| <img src="https://github.com/carlosDAC2020.png" width="48" height="48" style="border-radius:50%"/> | [Carlos Agamez](https://github.com/carlosDAC2020) | Researcher |
 
-### Research Assistants
+### Research Assistants & Contributors
 
-| Name | Role |
-|------|------|
-| Andres Quinones | Research Assistant & Web Master · Systems Engineering · Master's student (AI/NLP) |
+| Avatar | Name | Role |
+|--------|------|------|
+| <img src="https://github.com/santiagomarmol.png" width="48" height="48" style="border-radius:50%"/> | [Santiago Marmol](https://github.com/santiagomarmol) | Software Developer · HTML · CSS · JS · PHP |
+| <img src="https://github.com/haroldstyven.png" width="48" height="48" style="border-radius:50%"/> | [Harold Styven Lagares De Voz](https://github.com/haroldstyven) | Contributor |
+| <img src="https://github.com/keilevv.png" width="48" height="48" style="border-radius:50%"/> | [Caleb Villalba](https://github.com/keilevv) | Contributor |
+| <img src="https://github.com/SnowTrash.png" width="48" height="48" style="border-radius:50%"/> | [Juan Lopez](https://github.com/SnowTrash) | Programmer |
+| <img src="https://github.com/Lagares02.png" width="48" height="48" style="border-radius:50%"/> | [Harold Lagares](https://github.com/Lagares02) | Junior Software Developer |
+| <img src="https://github.com/oruz-123.png" width="48" height="48" style="border-radius:50%"/> | [oruz-123](https://github.com/oruz-123) | Contributor |
 
 ---
 
