@@ -135,7 +135,7 @@
         <p>A friend's daughter, learning to write and growing up multilingual, left a note for Bea, a toddler. She finished four lines of careful handwriting with a heart. The message, <em>"dear Bea, you're very cute,"</em> took me a long minute to read, because not one of those words was spelled by a single set of rules.</p>
         
         <figure>
-            <img src="/static/note_cleaned.png" alt="Handwritten note saying Diy Beya Your veri qoot with a heart">
+            <img src="/static/note_cleaned.png" alt="Handwritten note saying Diy Beya Your veri qoot with a heart" onerror="this.onerror=null; this.src='../../static/note_cleaned.png'; if(this.src.includes('../../')) { this.onerror=function(){this.src='https://raw.githubusercontent.com/VerbaNexAI/verbanexai.github.io/verbanex_gh/static/note_cleaned.png'}; }">
             <figcaption>The note. Intended message: "dear Bea, you're very cute". Each word is spelled by a different phonetic intuition borrowed loosely from the writer's several languages.</figcaption>
         </figure>
 
@@ -162,14 +162,14 @@
         <p>My anchors? 55 photos of common objects (apple, bus, car, chair, cow, dog, pizza, tree, etc.).</p>
 
         <figure>
-            <img src="/static/figure_anchors.png" alt="Sample anchor images used to fit the DINOv2 to BERT Procrustes alignment">
+            <img src="/static/figure_anchors.png" alt="Sample anchor images used to fit the DINOv2 to BERT Procrustes alignment" onerror="this.onerror=null; this.src='../../static/figure_anchors.png'; if(this.src.includes('../../')) { this.onerror=function(){this.src='https://raw.githubusercontent.com/VerbaNexAI/verbanexai.github.io/verbanex_gh/static/figure_anchors.png'}; }">
             <figcaption>Sample anchor images (8 of 55 used to fit the alignment).</figcaption>
         </figure>
 
         <p>I then tested on 12 messy, out-of-distribution images that aren't in the anchor set. Some are photos, some look like CAPTCHA-style obscured shots. The model is asked to pick a word from a 3,000-word vocabulary it's never been told about.</p>
 
         <figure>
-            <img src="/static/figure_captcha_test.png" alt="Test images categorized by top-5 recovery">
+            <img src="/static/figure_captcha_test.png" alt="Test images categorized by top-5 recovery" onerror="this.onerror=null; this.src='../../static/figure_captcha_test.png'; if(this.src.includes('../../')) { this.onerror=function(){this.src='https://raw.githubusercontent.com/VerbaNexAI/verbanexai.github.io/verbanex_gh/static/figure_captcha_test.png'}; }">
             <figcaption>Test images categorized by top-5 recovery. Green-bordered: at least one top-5 word is in the same semantic category. Red-bordered: no top-5 word in category.</figcaption>
         </figure>
 
@@ -191,7 +191,7 @@
         <p>Refit the held-out-cluster reconstruction on n training anchors (n = 10, 20, 40, 80, 160, 320, 534), against a shuffled-correspondence control at each n. The real run falls from 34.7 to 18.0 mean E00 as n grows; the shuffled control stays at chance (~38-41) at every n. The gap (shuffled - real) reaches 90% of its full value by n = 160.</p>
         
         <figure>
-            <img src="/static/pool_sweep.png" alt="Gap shuffled - real, mean E00 vs absolute training-anchor count n, for four pool sizes.">
+            <img src="/static/pool_sweep.png" alt="Gap shuffled - real, mean E00 vs absolute training-anchor count n, for four pool sizes." onerror="this.onerror=null; this.src='../../static/pool_sweep.png'; if(this.src.includes('../../')) { this.onerror=function(){this.src='https://raw.githubusercontent.com/VerbaNexAI/verbanexai.github.io/verbanex_gh/static/pool_sweep.png'}; }">
             <figcaption>Gap (shuffled - real), mean E00 vs absolute training-anchor count n, for four pool sizes. The curves collapsing at fixed n = the absolute floor.</figcaption>
         </figure>
 
