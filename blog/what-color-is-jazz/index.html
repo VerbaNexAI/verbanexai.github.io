@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Color is Jazz? | VerbaNexAI Blog</title>
+    
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* THEME VARIABLES */
+        :root[data-bs-theme="dark"] {
+            --bg-color: #050505;
+            --text-color: #e0e0e0;
+            --nav-bg: rgba(5, 5, 5, 0.8);
+            --card-bg: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --btn-custom-bg: rgba(255, 255, 255, 0.05);
+            --list-item-bg: rgba(25, 25, 25, 0.6);
+            --text-muted-custom: #a1a1aa;
+        }
+
+        :root[data-bs-theme="light"] {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --btn-custom-bg: rgba(0, 0, 0, 0.05);
+            --list-item-bg: rgba(255, 255, 255, 0.8);
+            --text-muted-custom: #52525b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .navbar { background: var(--nav-bg) !important; backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); }
+        .text-gradient { background: linear-gradient(90deg, #0d6efd, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        #theme-toggle { font-size: 1.2rem; background: none; border: none; color: inherit; padding: 0 0.5rem; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
+        #theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
+
+        /* Blog specific styles */
+        .blog-content { font-size: 1.1rem; line-height: 1.8; color: var(--text-color); }
+        .blog-content h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+        .blog-content h3 { margin-top: 2rem; margin-bottom: 1rem; font-weight: 600; font-family: 'Space Grotesk', sans-serif; }
+        .blog-content p { margin-bottom: 1.5rem; color: var(--text-color); opacity: 0.9; }
+        .blog-content img { border-radius: 10px; max-width: 100%; height: auto; margin: 2rem 0; border: 1px solid var(--border-color); }
+        .blog-content blockquote { border-left: 4px solid #0d6efd; padding-left: 1rem; margin-left: 0; font-style: italic; color: var(--text-muted-custom); }
+        .color-swatch { display: inline-block; width: 22px; height: 14px; border: 1px solid #888; vertical-align: middle; margin: 0 4px; border-radius: 3px; }
+        
+        figure { margin: 2rem 0; text-align: center; }
+        figcaption { font-size: 0.9rem; color: var(--text-muted-custom); margin-top: 0.5rem; font-style: italic; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient" href="/">VerbaNexAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publications/">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teaching/">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/repositories/">Repositories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/people/">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/" style="color: #0d6efd;">Blog</a></li>
+                    <li class="nav-item ms-lg-3"><button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="container pt-5 mt-5" style="max-width: 800px;" data-aos="fade-up">
+        <div class="mt-5 mb-4">
+            <span class="badge bg-primary bg-opacity-25 text-primary rounded-pill px-3 py-2 mb-3">Research Highlight</span>
+            <h1 class="display-5 fw-bold mb-4">What Color is Jazz?</h1>
+            
+            <div class="d-flex align-items-center pb-4 border-bottom" style="border-color: var(--border-color) !important;">
+                <div class="me-3 bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; color: white; font-weight: bold; font-size: 1.2rem;">
+                    OR
+                </div>
+                <div>
+                    <p class="mb-0 fw-bold">Oneris Rico C</p>
+                    <p class="mb-0 text-secondary small">2026 • 8 min read</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <main class="container mb-5 pb-5 blog-content" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="100">
+        
+        <p>I have two embedding spaces—basically, two different ways a computer turns things into numbers. One is CIELAB, a 3-number representation of color. The other is BERT (Devlin et al., 2019), a 768-number representation of the meaning of a word. They have nothing in common at first glance: different sizes, different inputs, different purposes.</p>
+
+        <p>But I show that if you give the computer 950 examples of "this color name goes with this RGB", you can fit a smooth bridge from one space to the other. From then on it can guess the color of words it has never seen:</p>
+        
+        <ul>
+            <li><strong>royal</strong> comes out a deep purple <span class="color-swatch" style="background:#4f3880"></span> (0.31, 0.22, 0.50)</li>
+            <li><strong>navy</strong> comes out a dark blue-gray <span class="color-swatch" style="background:#333857"></span> (0.20, 0.22, 0.34)</li>
+            <li><strong>jazz</strong> comes out a dusty rose <span class="color-swatch" style="background:#a86b6b"></span> (0.66, 0.42, 0.42)</li>
+        </ul>
+
+        <p>It's sometimes intuitive, sometimes surprising. It can also guess the name of colors it has never seen, picking concepts that are close to the right answer even when it gets the exact word wrong.</p>
+
+        <p>Then I do the same trick with images instead of colors: 55 anchor pictures of common objects, plus a vision model that has never been trained on word labels, and suddenly it starts naming new images. Not always with the right word, but always with a word that lives near the right one.</p>
+
+        <p>The interesting part isn't that this works. It's <em>why</em> it works with so few anchors. My claim is that the structure being lined up is already there in both spaces before I lined anything up, because <strong>all the data was filtered through humans first</strong>. We're not discovering some deep truth about the world. We're noticing that both models inherit the same human bias, so of course they line up.</p>
+
+        <h2>Two stories that started this</h2>
+
+        <p>A friend's daughter, learning to write and growing up multilingual, left a note for Bea, a toddler. She finished four lines of careful handwriting with a heart. The message, <em>"dear Bea, you're very cute,"</em> took me a long minute to read, because not one of those words was spelled by a single set of rules.</p>
+        
+        <figure>
+            <img src="/assets/img/note_cleaned.jpg" alt="Handwritten note saying Diy Beya Your veri qoot with a heart">
+            <figcaption>The note. Intended message: "dear Bea, you're very cute". Each word is spelled by a different phonetic intuition borrowed loosely from the writer's several languages.</figcaption>
+        </figure>
+
+        <p>One thought sat beneath all four spellings. The surface forms fused every writing system she had.</p>
+
+        <p>Around the same time Bea, who loves buses and had never seen a real train, was given a model train. She picked it up, looked at it carefully, and called it a "bus".</p>
+
+        <p>The shape of how we organize concepts is more shared than the labels we put on them. Bea named the train "bus" because in her concept space, buses and trains both meant "thing people ride in" to her, and the closest label she had for that neighborhood was "bus". This is a textbook thematic/functional overextension—children consistently overextend along functional and thematic lines before settling into adult taxonomies.</p>
+
+        <h2>The Platonic Representation Hypothesis vs. Human Bias</h2>
+
+        <p>When you train a big neural network on a pile of human-curated data, it ends up with a giant cloud of vectors that has some internal geometry. Every modality gets its own cloud: images live in one cloud, words in another, colors in a third.</p>
+
+        <p>There's a popular hypothesis (Huh et al., 2024), the <strong>Platonic Representation Hypothesis</strong>, that all sufficiently good models, regardless of modality, eventually converge on the same internal cloud. The argument is roughly: they're all approximating the same underlying world, so they'd better look the same in the limit.</p>
+
+        <p>I think there's a simpler explanation: <strong>All the data we feed these models was already filtered through human cognition before it ever became training data.</strong> The clouds aren't shaped by the world, they're shaped by how humans organize the world before we hand it to the model.</p>
+
+        <p>If that's right, two clouds from two different modalities should already share their internal organization (which concepts sit near which) even though their coordinates are wildly different. And if they already share that organization, you should be able to bridge them with a tiny amount of glue: a few known correspondences, fit with a simple smooth or rigid map.</p>
+
+        <h2>Testing the premise: Images and Word Vectors</h2>
+
+        <p>To test this on a harder modality, I used vision space (DINOv2, a self-supervised image model) and word space (BERT). Same trick: a small set of anchored picture/word pairs, then a rigid rotation (orthogonal Procrustes) lining the two clouds up.</p>
+
+        <p>My anchors? 55 photos of common objects (apple, bus, car, chair, cow, dog, pizza, tree, etc.).</p>
+
+        <figure>
+            <img src="/assets/img/figure_anchors.jpg" alt="Sample anchor images used to fit the DINOv2 to BERT Procrustes alignment">
+            <figcaption>Sample anchor images (8 of 55 used to fit the alignment).</figcaption>
+        </figure>
+
+        <p>I then tested on 12 messy, out-of-distribution images that aren't in the anchor set. Some are photos, some look like CAPTCHA-style obscured shots. The model is asked to pick a word from a 3,000-word vocabulary it's never been told about.</p>
+
+        <figure>
+            <img src="/assets/img/figure_captcha_test.jpg" alt="Test images categorized by top-5 recovery">
+            <figcaption>Test images categorized by top-5 recovery. Green-bordered: at least one top-5 word is in the same semantic category. Red-bordered: no top-5 word in category.</figcaption>
+        </figure>
+
+        <p>If you just look at top-1 accuracy, it's 0%. But if you look at the top-5 lists, something interesting happens:</p>
+
+        <ul>
+            <li><strong>Bus image:</strong> returns <em>train, bus, boston, railroad, station</em></li>
+            <li><strong>Car image (clean):</strong> returns <em>boat, truck, ship, ford, train</em></li>
+            <li><strong>Car image (CAPTCHA):</strong> returns <em>boat, train, railroad, ford, truck</em></li>
+            <li><strong>Plane image:</strong> returns <em>ship, plane, aircraft, boat, fleet</em></li>
+        </ul>
+
+        <p>Because top-1 is zero across the board, the interesting question is whether the top-5 contains at least one word in the same semantic category as the ground truth. By that rule, 8 of the 12 test images are categorical hits.</p>
+
+        <p>This is the same thing Bea did with the model train, scaled up. The aligned model knows it's looking at some kind of vehicle even when it doesn't pick the right one.</p>
+
+        <h2>Why this matters</h2>
+
+        <p>When the image-to-words bridge misses, it misses to <em>train, ship, ford</em>. Things that move. The shuffled and identity controls don't even do that. They miss to nothing in particular.</p>
+
+        <p>That's the part that matters to me. If two embedding spaces converged because both approximated some external truth about the world, you'd expect failures to be unstructured: the model would either get it right or get it wrong in any direction. Instead the failures cluster, and they cluster the way humans cluster these concepts.</p>
+
+        <p>Less grand than Platonic, but it fits with fewer assumptions. We're not learning that the world has a hidden geometric structure that all good models discover. We're learning that the human sorting survives the embedding process.</p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5 border-top text-center" style="border-color: var(--border-color) !important; background: var(--bg-color);">
+        <div class="container">
+            <p class="mb-1 fw-medium">&copy; 2026 VerbaNexAI Lab</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('page-loaded'); });
+        
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        function updateThemeIcon(theme) { themeBtn.innerHTML = theme === 'dark' ? '☀️' : '🌙'; }
+        
+        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        updateThemeIcon(currentTheme);
+        
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
+</html>
